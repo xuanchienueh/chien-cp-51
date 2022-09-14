@@ -1,0 +1,212 @@
+:root {
+  --primary-color: #05aae1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+}
+ul {
+  list-style: none;
+}
+
+.infoCourse {
+  margin: 40px;
+}
+
+.infoCourse .container {
+  display: flex;
+}
+.infoCourse .container .content {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.infoCourse .container .img {
+  width: 50%;
+}
+.infoCourse .container .img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.infoCourse .content_Info .listInfo {
+  list-style: none;
+}
+
+.infoCourse .content_Info ul.listInfo li {
+  display: flex;
+}
+
+.infoCourse .content_Info ul.listInfo li .cover {
+  margin: 4px 0 4px 0.5rem;
+  width: 146px;
+}
+
+.infoCourse .content_Info ul.listInfo li .content_Title {
+  color: var(--primary-color);
+  font-size: 2.625rem;
+  font-weight: 800;
+}
+
+.infoCourse .content_Info ul.listInfo .cover span {
+  color: #333;
+  font-size: 1.125rem;
+  display: block;
+  margin-top: -0.25rem;
+}
+
+.infoCourse .content_Info .note {
+  color: #7d7d7d;
+  font-size: 0.75rem;
+  width: 350px;
+  padding-left: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.infoCourse .note .report {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.infoCourse .content_Info button {
+  border: none;
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 993px) {
+  .infoCourse .listInfo_tablet {
+    display: none;
+  }
+  .infoCourse .content {
+    position: relative;
+  }
+  .infoCourse .content::after {
+    position: absolute;
+    content: "";
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    background-color: #f2f2f4;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 90%;
+    left: -1rem;
+    right: 0.75rem;
+    z-index: -1;
+  }
+  .infoCourse .content::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 206px solid transparent;
+    /* border-left: 99px solid rgba(255, 0, 0, 0.1); */
+    border-left: 99px solid #f2f2f4;
+    border-bottom: 206px solid transparent;
+    right: -87px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+  .infoCourse .container {
+    display: block;
+  }
+  .infoCourse .container .content {
+    display: block;
+  }
+  .infoCourse .container .img {
+    width: 100%;
+  }
+  .infoCourse .content_Info .listInfo {
+    display: none;
+  }
+  .infoCourse .content_Info .listInfo_tablet {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+  }
+  .infoCourse .content_Info ul.listInfo_tablet .cover {
+    max-width: 150px;
+  }
+  .infoCourse .content_Info ul.listInfo_tablet li .content_Title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  .infoCourse .content_Info ul.listInfo_tablet .cover span {
+    color: #333;
+    font-size: 1rem;
+    display: block;
+  }
+  .infoCourse .content_Info .note_container {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .infoCourse .content_Info .note {
+    width: auto;
+  }
+  .infoCourse .content_Info .button {
+    text-align: center;
+  }
+  .infoCourse .content_Info button {
+    text-align: center;
+    margin-left: 0;
+    padding: 1.5rem 3rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .infoCourse {
+    margin: 1rem 12px;
+  }
+  .infoCourse .container {
+    display: block;
+  }
+  .infoCourse .listInfo_tablet {
+    display: none;
+  }
+  .infoCourse .container .img {
+    width: 100%;
+  }
+  .infoCourse .container .content {
+    margin-left: 0;
+  }
+  .infoCourse .content_Info {
+    margin-top: 1rem;
+  }
+  .infoCourse .content_Info .listInfo {
+    margin-left: 0.5rem;
+  }
+  .infoCourse .content_Info ul.listInfo li .content_Title {
+    font-size: 1.5rem;
+  }
+  .infoCourse .content_Info ul.listInfo .cover span {
+    font-size: 0.75rem;
+  }
+  .infoCourse .content_Info .button {
+    text-align: center;
+  }
+  .infoCourse .content_Info button {
+    margin-left: 0;
+    padding: 1.3rem 2rem;
+  }
+  .infoCourse .content_Info .note_container {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+}
