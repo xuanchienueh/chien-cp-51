@@ -128,8 +128,7 @@ ul {
   .infoCourse .content {
     position: relative;
   }
-  .infoCourse .content::after {
-    content: "";
+  .infoCourse .content .headArrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -139,6 +138,20 @@ ul {
     background-color: white;
     z-index: 0;
   }
+  .infoCourse .content .headArrow::after {
+    position: absolute;
+    content: "";
+    top: 48.3%;
+    left: 103.4%;
+    width: 88px;
+    height: 12px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 95px / 78px;
+  }
+  /* .infoCourse .content::after {
+
+  } */
 
   .infoCourse .content::before {
     content: "";
@@ -148,7 +161,7 @@ ul {
     width: 0;
     height: 0;
     border-top: 142px solid transparent;
-    border-left: 100px solid white;
+    border-left: 100px solid #fff;
     border-bottom: 142px solid transparent;
   }
   .infoCourse .content .content_Info {
