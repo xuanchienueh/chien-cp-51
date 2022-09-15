@@ -1,11 +1,9 @@
-:root {
-  --primary-color: #05aae1;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-size: 16px;
 }
@@ -14,19 +12,25 @@ ul {
 }
 
 .infoCourse {
-  margin: 40px;
+  padding: 20px;
+  background-color: #f2f2f4;
+  position: relative;
 }
 
 .infoCourse .container {
   display: flex;
+  width: 100%;
 }
 .infoCourse .container .content {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  padding-left: 1rem;
+  width: 50%;
+  position: relative;
 }
 .infoCourse .container .img {
   width: 50%;
+  overflow: hidden;
 }
 .infoCourse .container .img img {
   width: 100%;
@@ -43,12 +47,13 @@ ul {
 }
 
 .infoCourse .content_Info ul.listInfo li .cover {
-  margin: 4px 0 4px 0.5rem;
-  width: 146px;
+  margin: 0;
+  width: 160px;
+  padding-right: 0.75rem;
 }
 
 .infoCourse .content_Info ul.listInfo li .content_Title {
-  color: var(--primary-color);
+  color: #05aae1;
   font-size: 2.625rem;
   font-weight: 800;
 }
@@ -57,7 +62,7 @@ ul {
   color: #333;
   font-size: 1.125rem;
   display: block;
-  margin-top: -0.25rem;
+  margin-top: -0.4rem;
 }
 
 .infoCourse .content_Info .note {
@@ -69,56 +74,103 @@ ul {
   margin-bottom: 0.25rem;
 }
 .infoCourse .note .report {
-  color: var(--primary-color);
+  color: #05aae1;
   text-decoration: none;
 }
 
 .infoCourse .content_Info button {
   border: none;
-  padding: 1rem 1rem;
+  padding: 1.4rem 2.3rem;
   border-radius: 0.25rem;
-  background-color: var(--primary-color);
+  background-color: #05aae1;
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
   margin-left: 2rem;
-  margin-top: 1rem;
   cursor: pointer;
+}
+.infoCourse .container .img > div {
+  width: 100%;
+  height: 100%;
+  max-width: 470px;
+  max-height: 316px;
+  background-image: url("https://cybersoft.edu.vn/wp-content/uploads/2022/09/hinhanhlop1-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  float: right;
+  border-radius: 0.4rem;
 }
 
 @media screen and (min-width: 993px) {
   .infoCourse .listInfo_tablet {
     display: none;
   }
+  .infoCourse .container .img > img {
+    display: none;
+  }
+  .infoCourse .container .img {
+    width: 50%;
+  }
+  .infoCourse .container .img > div {
+    width: 100%;
+    height: 100%;
+    max-width: 470px;
+    max-height: 316px;
+    background-image: url("https://cybersoft.edu.vn/wp-content/uploads/2022/08/IMG_1665.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    float: right;
+    border-radius: 0.4rem;
+  }
+
   .infoCourse .content {
     position: relative;
   }
   .infoCourse .content::after {
-    position: absolute;
     content: "";
-    /* background-color: rgba(255, 0, 0, 0.1); */
-    background-color: #f2f2f4;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    left: 0;
+    width: 70%;
     height: 90%;
-    left: -1rem;
-    right: 0.75rem;
-    z-index: -1;
+    background-color: white;
+    z-index: 0;
   }
+
   .infoCourse .content::before {
-    position: absolute;
     content: "";
+    position: absolute;
+    left: 70%;
+
     width: 0;
     height: 0;
-    border-top: 206px solid transparent;
-    /* border-left: 99px solid rgba(255, 0, 0, 0.1); */
-    border-left: 99px solid #f2f2f4;
-    border-bottom: 206px solid transparent;
-    right: -87px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-    overflow: hidden;
+    border-top: 142px solid transparent;
+    border-left: 100px solid white;
+    border-bottom: 142px solid transparent;
+  }
+  .infoCourse .content .content_Info {
+    transform: translateY(2.2rem);
+    margin-left: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .infoCourse .content_Info ul.listInfo .cover > span {
+    font-size: 1.125rem;
+    display: block;
+  }
+  .infoCourse .content_Info ul.listInfo li {
+    margin-bottom: 0.5rem;
+  }
+  .infoCourse .content_Info .note_container {
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .infoCourse .content .button {
+    transform: translateY(-1rem);
   }
 }
 
@@ -128,6 +180,7 @@ ul {
   }
   .infoCourse .container .content {
     display: block;
+    width: 100%;
   }
   .infoCourse .container .img {
     width: 100%;
@@ -135,16 +188,20 @@ ul {
   .infoCourse .content_Info .listInfo {
     display: none;
   }
+  .infoCourse .container .content {
+    padding-left: 0;
+  }
   .infoCourse .content_Info .listInfo_tablet {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 1.5rem;
   }
   .infoCourse .content_Info ul.listInfo_tablet .cover {
+    display: block;
     max-width: 150px;
   }
   .infoCourse .content_Info ul.listInfo_tablet li .content_Title {
-    color: var(--primary-color);
+    color: #05aae1;
     font-size: 1.5rem;
     font-weight: 800;
   }
@@ -162,6 +219,7 @@ ul {
   }
   .infoCourse .content_Info .button {
     text-align: center;
+    margin-top: 1.8rem;
   }
   .infoCourse .content_Info button {
     text-align: center;
@@ -170,43 +228,46 @@ ul {
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 766px) {
   .infoCourse {
-    margin: 1rem 12px;
-  }
-  .infoCourse .container {
-    display: block;
+    padding: 1rem;
   }
   .infoCourse .listInfo_tablet {
     display: none;
   }
+  .infoCourse .block-pc {
+    display: none;
+  }
+  .infoCourse .container {
+    display: block;
+  }
   .infoCourse .container .img {
     width: 100%;
   }
-  .infoCourse .container .content {
-    margin-left: 0;
-  }
-  .infoCourse .content_Info {
-    margin-top: 1rem;
-  }
   .infoCourse .content_Info .listInfo {
-    margin-left: 0.5rem;
+    margin-top: 1rem;
   }
   .infoCourse .content_Info ul.listInfo li .content_Title {
     font-size: 1.5rem;
   }
   .infoCourse .content_Info ul.listInfo .cover span {
     font-size: 0.75rem;
+    margin-top: 0;
   }
-  .infoCourse .content_Info .button {
+  .infoCourse .content_Info ul.listInfo li .cover {
+    width: 150px;
+  }
+  .infoCourse .content_Info ul.listInfo li {
+    margin-bottom: 0.8rem;
+  }
+  .infoCourse .note_container {
     text-align: center;
+    transform: translateX(-1rem);
+  }
+  .infoCourse .note_container .note {
+    margin-bottom: 0.5rem;
   }
   .infoCourse .content_Info button {
-    margin-left: 0;
-    padding: 1.3rem 2rem;
-  }
-  .infoCourse .content_Info .note_container {
-    margin-top: 1.2rem;
-    text-align: center;
+    margin-top: 1rem;
   }
 }
