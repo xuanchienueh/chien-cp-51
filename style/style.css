@@ -190,7 +190,7 @@ ul {
     left: -20px;
     right: -20px;
     top: -30%;
-    bottom: 0;
+    bottom: 28px;
     background-color: white;
     border-radius: 4px;
     z-index: -1;
@@ -299,7 +299,7 @@ ul {
     left: -20px;
     right: -20px;
     top: -30%;
-    bottom: 0;
+    bottom: 28px;
     background-color: white;
     border-radius: 4px;
     z-index: -1;
