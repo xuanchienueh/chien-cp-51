@@ -1,21 +1,18 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 16px;
-}
-ul {
+.infoCourse ul {
   list-style: none;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0;
 }
 
 .infoCourse {
   padding: 20px;
-  background-color: #f2f2f4;
   position: relative;
   z-index: 0;
+  font-size: 16px;
 }
 
 .infoCourse .container {
@@ -54,20 +51,23 @@ ul {
 
 .infoCourse .content_Info ul.listInfo li .content_Title {
   color: #05aae1;
-  font-size: 2.625rem;
+  font-size: 40px;
+  line-height: 1.1;
   font-weight: 800;
 }
 
 .infoCourse .content_Info ul.listInfo .cover span {
   color: #333;
-  font-size: 1.125rem;
+  font-size: 16px;
+  line-height: 1.5;
   display: block;
   margin-top: -0.4rem;
 }
 
 .infoCourse .content_Info .note {
   color: #7d7d7d;
-  font-size: 0.75rem;
+  font-size: 12px;
+  line-height: 1.5;
   padding-left: 0.5rem;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -81,9 +81,10 @@ ul {
   border: none;
   padding: 1.4rem 2.3rem;
   border-radius: 0.25rem;
-  background-color: #05aae1;
+  background-image: linear-gradient(to right, #7462f9 35%, #df3ef8 100%);
   color: #fff;
-  font-size: 1rem;
+  font-size: 16px;
+  line-height: 1.5;
   font-weight: 600;
   margin-left: 2rem;
   cursor: pointer;
@@ -126,14 +127,15 @@ ul {
 
   .infoCourse .content {
     position: relative;
+    padding-left: 0;
   }
   .infoCourse .content .headArrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-    width: 70%;
-    height: 90%;
+    width: 90%;
+    height: 88%;
     background-color: white;
     z-index: 0;
   }
@@ -141,12 +143,12 @@ ul {
   .infoCourse .content::before {
     content: "";
     position: absolute;
-    left: 70%;
+    left: 90%;
     width: 0;
     height: 0;
-    border-top: 142px solid transparent;
+    border-top: 139px solid transparent;
     border-left: 100px solid #fff;
-    border-bottom: 142px solid transparent;
+    border-bottom: 139px solid transparent;
   }
   .infoCourse .content .content_Info {
     transform: translateY(2.2rem);
@@ -156,7 +158,8 @@ ul {
   }
 
   .infoCourse .content_Info ul.listInfo .cover > span {
-    font-size: 1.125rem;
+    font-size: 16px;
+    line-height: 1.5;
     display: block;
   }
   .infoCourse .content_Info ul.listInfo li {
@@ -167,7 +170,9 @@ ul {
     margin-bottom: 2rem;
   }
   .infoCourse .content_Info .note {
-    max-width: 350px;
+    max-width: 330px;
+    font-size: 12px;
+    line-height: 1.5;
   }
   .infoCourse .content .button {
     transform: translateY(-1rem);
@@ -234,13 +239,14 @@ ul {
   }
   .infoCourse .content_Info ul.listInfo_tablet li .content_Title {
     color: #05aae1;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 800;
     display: inline-block;
   }
   .infoCourse .content_Info ul.listInfo_tablet .cover span {
     color: #333;
-    font-size: 1rem;
+    font-size: 16px;
+    line-height: 1.5;
     display: inline-block;
   }
   .infoCourse .content_Info .note_container {
@@ -293,6 +299,7 @@ ul {
     width: 100%;
     position: relative;
   }
+
   .infoCourse .container .content::after {
     content: "";
     position: absolute;
@@ -314,7 +321,8 @@ ul {
     font-size: 1.5rem;
   }
   .infoCourse .content_Info ul.listInfo .cover span {
-    font-size: 0.75rem;
+    line-height: 1.5;
+    font-size: 12px;
     margin-top: 0;
   }
   .infoCourse .content_Info ul.listInfo li .cover {
@@ -330,7 +338,9 @@ ul {
   }
   .infoCourse .note_container .note {
     margin-bottom: 0.5rem;
+    padding-left: 0;
   }
+
   .infoCourse .content_Info .button {
     text-align: center;
   }
