@@ -1,0 +1,47 @@
+.icon-Project-Final { 
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon-Project-Final .itemCol { 
+    display: flex;
+    align-items: center;
+}
+
+.icon-Project-Final .borderClass { 
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+}
+
+.icon-Project-Final .itemColGlass { 
+    width: 62px;
+    height: 62px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.5s ease;
+    font-size: 40px;
+}
+
+.icon-Project-Final .itemColGlass img { 
+    width: 32px;
+}
+
+
+ .icon-Project-Final .cover { 
+    /* margin-left: 39px; */
+ }
+
+ .icon-Project-Final .cover .title { 
+    text-align: center;
+ }
+
+
+
