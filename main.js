@@ -6,7 +6,7 @@ window.addEventListener(  "scroll",  function () {
 
     sections.forEach((section) => {
       
-      const top = section.offsetTop -250;
+      const top = section.offsetTop -350;
       const html = document.documentElement;
       const height = section.offsetHeight;
 
