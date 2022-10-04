@@ -1,16 +1,18 @@
 
-const navItems = document.querySelectorAll(".nav-link");
-const sections = document.querySelectorAll(".section");
+const navItems = document.querySelectorAll(".system_study .desktop .nav-link");
+const sections = document.querySelectorAll(".system_study .desktop .section");
 
 window.addEventListener(  "scroll",  function () {
 
     sections.forEach((section) => {
-      const top = section.offsetTop - 5;
+      
+      const top = section.offsetTop -350;
       const html = document.documentElement;
       const height = section.offsetHeight;
 
       navItems.forEach((navItem) => {
         const hrefNav = navItem.href.match(/#[a-zA-Z]+/)[0];
+        
         const idSection = "#" + section.id;
         if (html.scrollTop >= top && top + height >= html.scrollTop) {
           hrefNav === idSection
