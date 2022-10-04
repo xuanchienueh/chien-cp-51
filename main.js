@@ -4,11 +4,12 @@ const sections = document.querySelectorAll(".system_study .desktop .section");
 
 window.addEventListener(  "scroll",  function () {
 
-    sections.forEach((section) => {
+    sections.forEach((section, index) => {
       
-      const top = section.offsetTop -350;
-      const html = document.documentElement;
       const height = section.offsetHeight;
+      const top = section.offsetTop + 400 ;
+      const html = document.documentElement;
+
 
       navItems.forEach((navItem) => {
         const hrefNav = navItem.href.match(/#[a-zA-Z]+/)[0];
@@ -19,9 +20,11 @@ window.addEventListener(  "scroll",  function () {
             ? navItem.parentElement.classList.add("active")
             : navItem.parentElement.classList.remove("active");
         } else {
-          hrefNav === idSection &&
-            navItem.parentElement.classList.remove("active");
+          // hrefNav === idSection &&
+          //   navItem.parentElement.classList.remove("active");
         }
+
+      
       });
     });
   },
