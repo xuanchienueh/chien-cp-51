@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  #job_page .container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  #job_page .header {
+    background-image: url(../img/bg_header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    color: #fff;
+    margin-top: -7.42857143rem;
+    padding: 13.14285714rem 0 7.42857143rem;
+    position: relative;
+  }
+  #job_page .header .header__overlay {
+    background: rgba(16, 29, 66, 0.65);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #job_page .header .content {
+    max-width: 30rem;
+    position: relative;
+    z-index: 2;
+  }
+  #job_page .header .content .header__title {
+    font-size: 3.42857143rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.02;
+    margin-bottom: 1.71428571rem;
+    text-shadow: 0 1px 3px rgba(19, 23, 33, 0.304);
+  }
+  #job_page .header .content .header__description {
+    font-size: 1.14285714rem;
+    font-weight: 600;
+    line-height: 1.71428571rem;
+    margin-bottom: 2.28571429rem;
+  }
+  #job_page .header .content .header__description span {
+    color: #ffcf00;
+  }
+  #job_page .header .content .header__apply {
+    align-items: center;
+    -webkit-appearance: none;
+    background-color: #1358db;
+    border: 1px solid #1358db;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 1.071rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: normal;
+    line-height: 1.1rem;
+    padding: 15px 24px;
+    text-align: center;
+    transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+  }/*# sourceMappingURL=index.css.map */
+  
+  #statistical { 
+    /* background-color: #1f1d2b; */
+    max-width: 932px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 153px;
+  }
+  #statistical h1.title { 
+    text-align: center;;
+    color: black;
+    font-size: 37px;
+    margin-bottom: 20px;
+  }
+  #statistical .contentAfterTitle {
+    color: #80828b;
+    font-size: 22px;
+    text-align: center;;
+  }
+  #statistical .contentAfterTitle span {
+    color: #999BA4;
+    font-weight: 900;
+  }
+  
+  #statistical .bg { 
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+  }
+  #statistical .bg .item { 
+    position: relative;
+  }
+  
+  #statistical .spinner { 
+      width: 250px;
+    display: block;
+  
+  }
+  
