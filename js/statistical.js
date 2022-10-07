@@ -5,13 +5,7 @@ window.onload = function () {
   spinner3(77);
 };
 const class_spinners = document.querySelectorAll("#statistical .spinner");
-// class_spinners.forEach((class_spinner, index) => {
-//   class_spinners[index].onmouseover = function () {
-//     let nameFunction = "spinner" + index;
-//     console.log(nameFunction);
 
-//   };
-// });
 class_spinners[0].onmouseover = function () {
   spinner0(67);
 };
@@ -24,6 +18,13 @@ class_spinners[2].onmouseover = function () {
 class_spinners[3].onmouseover = function () {
   spinner3(77);
 };
+
+
+
+
+
+
+/* -------------- */
 function spinner0(percent) {
   let spinner = document.getElementById("spinner1");
 
@@ -33,10 +34,15 @@ function spinner0(percent) {
   let degrees = 0;
   let new_degrees = 0;
   let difference = 0;
-  let color = "#0096dc";
-  let bgcolor = "#cecfd0";
+  let color = "blue";
+  let bgcolor = "#ccc";
   let text;
   let animation_loop, redraw_loop;
+  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
+  gradient.addColorStop("0", "#227df9");
+  gradient.addColorStop("0.25", "#7462f9");
+  gradient.addColorStop("0.5", "#df3ef8");
+  gradient.addColorStop("1.0", "#227df9");
 
   function init() {
     ctx.clearRect(0, 0, width, height);
@@ -49,7 +55,7 @@ function spinner0(percent) {
     let radians = (degrees * Math.PI) / 180;
 
     ctx.beginPath();
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = gradient;
     ctx.lineWidth = 50;
     ctx.arc(
       width / 2,
@@ -60,7 +66,7 @@ function spinner0(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = color;
+    ctx.fillStyle = gradient;;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -84,6 +90,10 @@ function spinner0(percent) {
   draw(percent);
 }
 
+
+
+
+/* -------------- */
 function spinner1(percent) {
   let spinner = document.getElementById("spinner2");
 
@@ -93,10 +103,15 @@ function spinner1(percent) {
   let degrees = 0;
   let new_degrees = 0;
   let difference = 0;
-  let color = "#0096dc";
-  let bgcolor = "#cecfd0";
+  let color = "blue";
+  let bgcolor = "#ccc";
   let text;
   let animation_loop, redraw_loop;
+  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
+  gradient.addColorStop("0", "#227df9");
+  gradient.addColorStop("0.25", "#7462f9");
+  gradient.addColorStop("0.5", "#df3ef8");
+  gradient.addColorStop("1.0", "#227df9");
 
   function init() {
     ctx.clearRect(0, 0, width, height);
@@ -109,7 +124,7 @@ function spinner1(percent) {
     let radians = (degrees * Math.PI) / 180;
 
     ctx.beginPath();
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = gradient;
     ctx.lineWidth = 50;
     ctx.arc(
       width / 2,
@@ -120,7 +135,7 @@ function spinner1(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = color;
+    ctx.fillStyle = gradient;;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -143,6 +158,11 @@ function spinner1(percent) {
 
   draw(percent);
 }
+
+
+
+
+/* -------------- */
 function spinner2(percent) {
   let spinner = document.getElementById("spinner3");
 
@@ -152,10 +172,15 @@ function spinner2(percent) {
   let degrees = 0;
   let new_degrees = 0;
   let difference = 0;
-  let color = "#0096dc";
-  let bgcolor = "#cecfd0";
+  let color = "blue";
+  let bgcolor = "#ccc";
   let text;
   let animation_loop, redraw_loop;
+  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
+  gradient.addColorStop("0", "#227df9");
+  gradient.addColorStop("0.25", "#7462f9");
+  gradient.addColorStop("0.5", "#df3ef8");
+  gradient.addColorStop("1.0", "#227df9");
 
   function init() {
     ctx.clearRect(0, 0, width, height);
@@ -168,7 +193,7 @@ function spinner2(percent) {
     let radians = (degrees * Math.PI) / 180;
 
     ctx.beginPath();
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = gradient;
     ctx.lineWidth = 50;
     ctx.arc(
       width / 2,
@@ -179,7 +204,7 @@ function spinner2(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = color;
+    ctx.fillStyle = gradient;;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -202,6 +227,10 @@ function spinner2(percent) {
 
   draw(percent);
 }
+
+
+
+/* -------------- */
 function spinner3(percent) {
   let spinner = document.getElementById("spinner4");
 
@@ -211,10 +240,15 @@ function spinner3(percent) {
   let degrees = 0;
   let new_degrees = 0;
   let difference = 0;
-  let color = "#0096dc";
-  let bgcolor = "#cecfd0";
+  let color = "blue";
+  let bgcolor = "#ccc";
   let text;
   let animation_loop, redraw_loop;
+  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
+  gradient.addColorStop("0", "#227df9");
+  gradient.addColorStop("0.25", "#7462f9");
+  gradient.addColorStop("0.5", "#df3ef8");
+  gradient.addColorStop("1.0", "#227df9");
 
   function init() {
     ctx.clearRect(0, 0, width, height);
@@ -227,7 +261,7 @@ function spinner3(percent) {
     let radians = (degrees * Math.PI) / 180;
 
     ctx.beginPath();
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = gradient;
     ctx.lineWidth = 50;
     ctx.arc(
       width / 2,
@@ -238,7 +272,7 @@ function spinner3(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = color;
+    ctx.fillStyle = gradient;;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -261,3 +295,4 @@ function spinner3(percent) {
 
   draw(percent);
 }
+
