@@ -172,12 +172,46 @@ body {
   display: flex;
   position: relative;
 }
+#outcomes_study .track_tabs .tab-content { 
+  position: relative;
+}
+#outcomes_study .track_tabs .tab-content .group_button { 
+  position: absolute;
+  bottom: 100px;
+  right: 72px;
+}
+#outcomes_study .track_tabs .tab-content .group_button button { 
+  padding: 22px 26px;
+  font-size: 24px;
+  border: 1px solid transparent;
+  color: #fff;
+  outline: none;
+  transition: all ease-in-out 0.2s;
+  background-color: rgba(5, 170, 225, 0.5);
+  cursor: pointer;
+}
+#outcomes_study .track_tabs .tab-content .group_button button.active { 
+  background-color: #05aae1;
+}
+#outcomes_study .track_tabs .tab-content .group_button button:hover { 
+  background-color: #05aae1;
+
+}
+#outcomes_study .track_tabs .tab-content .group_button button.arrow_left { 
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#outcomes_study .track_tabs .tab-content .group_button button.arrow_right { 
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
 
 #outcomes_study .track_tabs .tab-item {
   position: relative;
   min-width: 80px;
   padding: 16px 20px 11px 20px;
-  font-size: 14px;
+  font-size: 18x;
   text-align: center;
   flex-grow: 1;
   width: 24%;
