@@ -172,15 +172,24 @@ body {
   display: flex;
   position: relative;
 }
-#outcomes_study .track_tabs .tab-content { 
+#outcomes_study .track_tabs .tab-content {
   position: relative;
 }
-#outcomes_study .track_tabs .tab-content .group_button { 
+#outcomes_study .track_tabs .tab-content .bg-tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 220px;
+  bottom: 0;
+  /* background-color: red; */
+  z-index: 2;
+}
+#outcomes_study .track_tabs .tab-content .group_button {
   position: absolute;
   bottom: 100px;
   right: 72px;
 }
-#outcomes_study .track_tabs .tab-content .group_button button { 
+#outcomes_study .track_tabs .tab-content .group_button button {
   padding: 22px 26px;
   font-size: 24px;
   border: 1px solid transparent;
@@ -190,22 +199,20 @@ body {
   background-color: rgba(5, 170, 225, 0.5);
   cursor: pointer;
 }
-#outcomes_study .track_tabs .tab-content .group_button button.active { 
+#outcomes_study .track_tabs .tab-content .group_button button.active {
   background-color: #05aae1;
 }
-#outcomes_study .track_tabs .tab-content .group_button button:hover { 
+#outcomes_study .track_tabs .tab-content .group_button button:hover {
   background-color: #05aae1;
-
 }
-#outcomes_study .track_tabs .tab-content .group_button button.arrow_left { 
+#outcomes_study .track_tabs .tab-content .group_button button.arrow_left {
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-#outcomes_study .track_tabs .tab-content .group_button button.arrow_right { 
+#outcomes_study .track_tabs .tab-content .group_button button.arrow_right {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-
 
 #outcomes_study .track_tabs .tab-item {
   position: relative;
@@ -383,4 +390,10 @@ body {
     line-height: 1.1;
     color: #444449;
   }
+}
+
+.test {
+  width: 200px;
+  height: 200px;
+  background-color: red;
 }
