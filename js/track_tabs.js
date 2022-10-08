@@ -107,11 +107,9 @@ let myVar = setInterval(myTimer, 5000);
 const content_hover = $(
   "#outcomes_study .track_tabs .tab-content .bg-tab-content"
 );
-
 content_hover.onmouseout = () => {
   console.log("onmouseout");
 };
-
 content_hover.onmouseover = () => {
   console.log("onmouseover");
   clearInterval(myVar);

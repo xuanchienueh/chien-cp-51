@@ -4,25 +4,23 @@ window.onload = function () {
   spinner2(74);
   spinner3(77);
 };
-const class_spinners = document.querySelectorAll("#statistical .spinner");
-
-class_spinners[0].onmouseover = function () {
+function debounce(func, timeout = 500) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+function onScroll1() {
   spinner0(67);
-};
-class_spinners[1].onmouseover = function () {
   spinner1(89);
-};
-class_spinners[2].onmouseover = function () {
   spinner2(74);
-};
-class_spinners[3].onmouseover = function () {
   spinner3(77);
-};
-
-
-
-
-
+}
+const processChange = debounce(() => onScroll1());
+window.addEventListener("scroll", processChange);
 
 /* -------------- */
 function spinner0(percent) {
@@ -66,7 +64,7 @@ function spinner0(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = gradient;;
+    ctx.fillStyle = gradient;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -77,7 +75,7 @@ function spinner0(percent) {
     if (typeof animation_loop != undefined) clearInterval(animation_loop);
     new_degrees = Math.ceil(percent * 3.6);
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 300 / difference);
+    animation_loop = setInterval(animate_to, 100 / difference);
   }
 
   function animate_to() {
@@ -89,9 +87,6 @@ function spinner0(percent) {
 
   draw(percent);
 }
-
-
-
 
 /* -------------- */
 function spinner1(percent) {
@@ -135,7 +130,7 @@ function spinner1(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = gradient;;
+    ctx.fillStyle = gradient;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -158,9 +153,6 @@ function spinner1(percent) {
 
   draw(percent);
 }
-
-
-
 
 /* -------------- */
 function spinner2(percent) {
@@ -204,7 +196,7 @@ function spinner2(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = gradient;;
+    ctx.fillStyle = gradient;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -227,8 +219,6 @@ function spinner2(percent) {
 
   draw(percent);
 }
-
-
 
 /* -------------- */
 function spinner3(percent) {
@@ -272,7 +262,7 @@ function spinner3(percent) {
       false
     );
     ctx.stroke();
-    ctx.fillStyle = gradient;;
+    ctx.fillStyle = gradient;
     ctx.font = "40px arial";
     text = Math.floor((degrees / 360) * 100) + "%";
     text_width = ctx.measureText(text).width;
@@ -295,4 +285,3 @@ function spinner3(percent) {
 
   draw(percent);
 }
-
