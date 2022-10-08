@@ -35,6 +35,12 @@ tabs.forEach((tab, index) => {
     pane.classList.add("active");
     console.log("tab.onclick", number_index);
   };
+
+  /* xử lý phần hover */
+  tab.onmouseover = function () {
+    console.log("onmouseover");
+    clearInterval(myVar);
+  };
 });
 
 arrow_left.onclick = function () {
@@ -93,18 +99,18 @@ function myTimer() {
     number_index = 0;
     const a = setTimeout(() => {
       tabs[0].click();
-    }, 3000);
+    }, 5000);
   }
 }
+let myVar = setInterval(myTimer, 5000);
 
-let myVar = setInterval(myTimer, 8000);
-
-const test = $("#outcomes_study .track_tabs .tab-content .bg-tab-content");
-test.onmouseover = () => {
-  // console.log("over");
-  clearInterval(myVar);
+const content_hover = $(
+  "#outcomes_study .track_tabs .tab-content .bg-tab-content"
+);
+content_hover.onmouseout = () => {
+  console.log("onmouseout");
 };
-test.onmouseout = () => {
-  // console.log("out");
-  let myVar12 = setInterval(myTimer, 8000);
+content_hover.onmouseover = () => {
+  console.log("onmouseover");
+  clearInterval(myVar);
 };
