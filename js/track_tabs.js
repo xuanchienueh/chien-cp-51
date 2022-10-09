@@ -1,6 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+let autoPlay = true;
 let number_index = 0;
 const tabs = $$("#outcomes_study .track_tabs .tab-item");
 const panes = $$("#outcomes_study .track_tabs .tab-pane");
@@ -9,6 +10,9 @@ const arrow_left = $("#outcomes_study .track_tabs .arrow_left");
 const arrow_right = $("#outcomes_study .track_tabs .arrow_right");
 const tabActive = $("#outcomes_study .track_tabs .tab-item.active");
 const tab_content = $("#outcomes_study .track_tabs .tab-content");
+const group_button = $(
+  "#outcomes_study .track_tabs .tab-content .group_button"
+);
 tabs[0].onclick = () => {
   $("#outcomes_study .track_tabs .tab-item.active").classList.remove("active");
   $("#outcomes_study .track_tabs .tab-pane.active").classList.remove("active");
@@ -16,7 +20,6 @@ tabs[0].onclick = () => {
   tabs[0].classList.add("active");
   panes[0].classList.add("active");
   number_index = 0;
-  console.log(number_index);
 };
 
 tabs.forEach((tab, index) => {
@@ -33,13 +36,19 @@ tabs.forEach((tab, index) => {
 
     tab.classList.add("active");
     pane.classList.add("active");
-    console.log("tab.onclick", number_index);
   };
 
-  /* xử lý phần hover */
+  /* xử lý phần onhover */
   tab.onmouseover = function () {
-    console.log("onmouseover");
-    clearInterval(myVar);
+    autoPlay = false;
+    timer && clearInterval(timer);
+  };
+  /* xử lý phần onmouseout */
+  tab.onmouseout = function () {
+    autoPlay = true;
+    timer = setInterval(() => {
+      myTimer();
+    }, 5000);
   };
 });
 
@@ -65,7 +74,6 @@ arrow_left.onclick = function () {
     arrow_right.classList.add("active");
     arrow_left.classList.add("active");
   }
-  console.log("arrow left", number_index);
 };
 
 arrow_right.onclick = function () {
@@ -90,27 +98,47 @@ arrow_right.onclick = function () {
     arrow_right.classList.add("active");
     arrow_left.classList.add("active");
   }
-  console.log("arrow_right", number_index);
 };
 
+let timer;
 function myTimer() {
   arrow_right.click();
   if (number_index === tabs.length - 1) {
     number_index = 0;
-    const a = setTimeout(() => {
+    setTimeout(() => {
       tabs[0].click();
     }, 5000);
   }
 }
-let myVar = setInterval(myTimer, 5000);
-
-const content_hover = $(
+if (autoPlay) {
+  timer = setInterval(() => {
+    myTimer();
+  }, 5000);
+}
+const pauseOnHover = $(
   "#outcomes_study .track_tabs .tab-content .bg-tab-content"
 );
-content_hover.onmouseout = () => {
-  console.log("onmouseout");
+
+pauseOnHover.onmouseout = () => {
+  autoPlay = true;
+  timer = setInterval(() => {
+    myTimer();
+  }, 5000);
 };
-content_hover.onmouseover = () => {
-  console.log("onmouseover");
-  clearInterval(myVar);
+
+pauseOnHover.onmouseover = () => {
+  autoPlay = false;
+  timer && clearInterval(timer);
+};
+
+group_button.onmouseout = () => {
+  autoPlay = true;
+  timer = setInterval(() => {
+    myTimer();
+  }, 5000);
+};
+
+group_button.onmouseover = () => {
+  autoPlay = false;
+  timer && clearInterval(timer);
 };

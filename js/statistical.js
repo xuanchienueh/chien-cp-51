@@ -1,10 +1,14 @@
-window.onload = function () {
-  spinner0(67);
-  spinner1(89);
-  spinner2(74);
-  spinner3(77);
-};
-function debounce(func, timeout = 500) {
+// window.onload = function () {
+//   spinner0(67);
+//   spinner1(89);
+//   spinner2(74);
+//   spinner3(77);
+// };
+spinner0(97);
+spinner1(89);
+spinner2(74);
+spinner3(77);
+function debounce(func, timeout = 900) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -14,7 +18,7 @@ function debounce(func, timeout = 500) {
   };
 }
 function onScroll1() {
-  spinner0(67);
+  spinner0(97);
   spinner1(89);
   spinner2(74);
   spinner3(77);
@@ -75,7 +79,10 @@ function spinner0(percent) {
     if (typeof animation_loop != undefined) clearInterval(animation_loop);
     new_degrees = Math.ceil(percent * 3.6);
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 100 / difference);
+    if (animation_loop) {
+      clearInterval(animation_loop);
+    }
+    animation_loop = setInterval(animate_to, 1 / difference);
   }
 
   function animate_to() {
@@ -141,7 +148,7 @@ function spinner1(percent) {
     if (typeof animation_loop != undefined) clearInterval(animation_loop);
     new_degrees = Math.ceil(percent * 3.6);
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 300 / difference);
+    animation_loop = setInterval(animate_to, 1 / difference);
   }
 
   function animate_to() {
@@ -207,7 +214,7 @@ function spinner2(percent) {
     if (typeof animation_loop != undefined) clearInterval(animation_loop);
     new_degrees = Math.ceil(percent * 3.6);
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 300 / difference);
+    animation_loop = setInterval(animate_to, 1 / difference);
   }
 
   function animate_to() {
@@ -273,7 +280,7 @@ function spinner3(percent) {
     if (typeof animation_loop != undefined) clearInterval(animation_loop);
     new_degrees = Math.ceil(percent * 3.6);
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 300 / difference);
+    animation_loop = setInterval(animate_to, 1 / difference);
   }
 
   function animate_to() {
