@@ -1,14 +1,11 @@
-// window.onload = function () {
-//   spinner0(67);
-//   spinner1(89);
-//   spinner2(74);
-//   spinner3(77);
-// };
-spinner0(97);
-spinner1(89);
-spinner2(74);
-spinner3(77);
-function debounce(func, timeout = 900) {
+window.onload = function () {
+  spinner0(67);
+  spinner1(89);
+  spinner2(74);
+  spinner3(77);
+};
+
+function debounce(func, timeout = 300) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -86,8 +83,14 @@ function spinner0(percent) {
   }
 
   function animate_to() {
-    if (degrees == new_degrees) clearInterval(animation_loop);
-    else if (degrees < new_degrees) degrees++;
+    if (degrees == new_degrees) { 
+      clearInterval(animation_loop)
+      window.addEventListener('scroll', processChange)
+    }
+    else if (degrees < new_degrees) { 
+      degrees++;
+      window.removeEventListener('scroll', processChange)
+    }
     else degrees--;
     init();
   }
@@ -152,8 +155,14 @@ function spinner1(percent) {
   }
 
   function animate_to() {
-    if (degrees == new_degrees) clearInterval(animation_loop);
-    else if (degrees < new_degrees) degrees++;
+    if (degrees == new_degrees) { 
+      clearInterval(animation_loop)
+      window.addEventListener('scroll', processChange)
+    }
+    else if (degrees < new_degrees) { 
+      degrees++;
+      window.removeEventListener('scroll', processChange)
+    }
     else degrees--;
     init();
   }
@@ -218,8 +227,14 @@ function spinner2(percent) {
   }
 
   function animate_to() {
-    if (degrees == new_degrees) clearInterval(animation_loop);
-    else if (degrees < new_degrees) degrees++;
+    if (degrees == new_degrees) { 
+      clearInterval(animation_loop)
+      window.addEventListener('scroll', processChange)
+    }
+    else if (degrees < new_degrees) { 
+      degrees++;
+      window.removeEventListener('scroll', processChange)
+    }
     else degrees--;
     init();
   }
@@ -284,8 +299,14 @@ function spinner3(percent) {
   }
 
   function animate_to() {
-    if (degrees == new_degrees) clearInterval(animation_loop);
-    else if (degrees < new_degrees) degrees++;
+    if (degrees == new_degrees) { 
+      clearInterval(animation_loop)
+      window.addEventListener('scroll', processChange)
+    }
+    else if (degrees < new_degrees) { 
+      degrees++;
+      window.removeEventListener('scroll', processChange)
+    }
     else degrees--;
     init();
   }
