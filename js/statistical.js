@@ -1,11 +1,19 @@
-window.onload = function () {
-  spinner0(67);
-  spinner1(89);
-  spinner2(74);
-  spinner3(77);
+let c1 = document.getElementById("c1");
+let t1 = document.getElementById("t1");
+let c2 = document.getElementById("c2");
+let t2 = document.getElementById("t2");
+let c3 = document.getElementById("c3");
+let t3 = document.getElementById("t3");
+let c4 = document.getElementById("c4");
+let t4 = document.getElementById("t4");
+let percent_start = 0;
+window.onload = () => {
+  animateNumber(67, 1000, 0, percent1);
+  animateNumber(77, 1000, 0, percent2);
+  animateNumber(87, 1000, 0, percent3);
+  animateNumber(97, 1000, 0, percent4);
 };
-
-function debounce(func, timeout = 300) {
+function debounce(func, timeout = 700) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -15,301 +23,64 @@ function debounce(func, timeout = 300) {
   };
 }
 function onScroll1() {
-  spinner0(97);
-  spinner1(89);
-  spinner2(74);
-  spinner3(77);
+  animateNumber(67, 1000, 0, percent1);
+  animateNumber(77, 1000, 0, percent2);
+  animateNumber(87, 1000, 0, percent3);
+  animateNumber(97, 1000, 0, percent4);
 }
+
 const processChange = debounce(() => onScroll1());
-window.addEventListener("scroll", processChange);
+window.addEventListener("scroll", () => {
+  processChange();
+});
 
-/* -------------- */
-function spinner0(percent) {
-  let spinner = document.getElementById("spinner1");
-
-  let ctx = spinner.getContext("2d");
-  let width = spinner.width;
-  let height = spinner.height;
-  let degrees = 0;
-  let new_degrees = 0;
-  let difference = 0;
-  let color = "blue";
-  let bgcolor = "#ccc";
-  let text;
-  let animation_loop, redraw_loop;
-  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
-  gradient.addColorStop("0", "#227df9");
-  gradient.addColorStop("0.25", "#7462f9");
-  gradient.addColorStop("0.5", "#df3ef8");
-  gradient.addColorStop("1.0", "#227df9");
-
-  function init() {
-    ctx.clearRect(0, 0, width, height);
-
-    ctx.beginPath();
-    ctx.strokeStyle = bgcolor;
-    ctx.lineWidth = 50;
-    ctx.arc(width / 2, width / 2, 100, 0, Math.PI * 2, false);
-    ctx.stroke();
-    let radians = (degrees * Math.PI) / 180;
-
-    ctx.beginPath();
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 50;
-    ctx.arc(
-      width / 2,
-      height / 2,
-      100,
-      0 - (90 * Math.PI) / 180,
-      radians - (90 * Math.PI) / 180,
-      false
-    );
-    ctx.stroke();
-    ctx.fillStyle = gradient;
-    ctx.font = "40px arial";
-    text = Math.floor((degrees / 360) * 100) + "%";
-    text_width = ctx.measureText(text).width;
-    ctx.fillText(text, width / 2 - text_width / 2, height / 2 + 15);
-  }
-
-  function draw(percent) {
-    if (typeof animation_loop != undefined) clearInterval(animation_loop);
-    new_degrees = Math.ceil(percent * 3.6);
-    difference = new_degrees - degrees;
-    if (animation_loop) {
-      clearInterval(animation_loop);
+function animateNumber(
+  finalNumber,
+  duration = 2000,
+  startNumber = 0,
+  callback
+) {
+  let currentNumber = startNumber;
+  const interval = window.setInterval(updateNumber, 17);
+  function updateNumber() {
+    if (currentNumber >= finalNumber) {
+      clearInterval(interval);
+      window.addEventListener("scroll", processChange);
+    } else {
+      window.removeEventListener("scroll", processChange);
+      let inc = Math.ceil(finalNumber / (duration / 17));
+      if (currentNumber + inc > finalNumber) {
+        currentNumber = finalNumber;
+        clearInterval(interval);
+      } else {
+        currentNumber += inc;
+      }
+      callback(currentNumber);
     }
-    animation_loop = setInterval(animate_to, 1 / difference);
   }
-
-  function animate_to() {
-    if (degrees == new_degrees) { 
-      clearInterval(animation_loop)
-      window.addEventListener('scroll', processChange)
-    }
-    else if (degrees < new_degrees) { 
-      degrees++;
-      window.removeEventListener('scroll', processChange)
-    }
-    else degrees--;
-    init();
-  }
-
-  draw(percent);
 }
 
-/* -------------- */
-function spinner1(percent) {
-  let spinner = document.getElementById("spinner2");
-
-  let ctx = spinner.getContext("2d");
-  let width = spinner.width;
-  let height = spinner.height;
-  let degrees = 0;
-  let new_degrees = 0;
-  let difference = 0;
-  let color = "blue";
-  let bgcolor = "#ccc";
-  let text;
-  let animation_loop, redraw_loop;
-  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
-  gradient.addColorStop("0", "#227df9");
-  gradient.addColorStop("0.25", "#7462f9");
-  gradient.addColorStop("0.5", "#df3ef8");
-  gradient.addColorStop("1.0", "#227df9");
-
-  function init() {
-    ctx.clearRect(0, 0, width, height);
-
-    ctx.beginPath();
-    ctx.strokeStyle = bgcolor;
-    ctx.lineWidth = 50;
-    ctx.arc(width / 2, width / 2, 100, 0, Math.PI * 2, false);
-    ctx.stroke();
-    let radians = (degrees * Math.PI) / 180;
-
-    ctx.beginPath();
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 50;
-    ctx.arc(
-      width / 2,
-      height / 2,
-      100,
-      0 - (90 * Math.PI) / 180,
-      radians - (90 * Math.PI) / 180,
-      false
-    );
-    ctx.stroke();
-    ctx.fillStyle = gradient;
-    ctx.font = "40px arial";
-    text = Math.floor((degrees / 360) * 100) + "%";
-    text_width = ctx.measureText(text).width;
-    ctx.fillText(text, width / 2 - text_width / 2, height / 2 + 15);
-  }
-
-  function draw(percent) {
-    if (typeof animation_loop != undefined) clearInterval(animation_loop);
-    new_degrees = Math.ceil(percent * 3.6);
-    difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 1 / difference);
-  }
-
-  function animate_to() {
-    if (degrees == new_degrees) { 
-      clearInterval(animation_loop)
-      window.addEventListener('scroll', processChange)
-    }
-    else if (degrees < new_degrees) { 
-      degrees++;
-      window.removeEventListener('scroll', processChange)
-    }
-    else degrees--;
-    init();
-  }
-
-  draw(percent);
+function percent1(number) {
+  c1.style.strokeDasharray = `${number} 100`;
+  //   t1.textContent = `${number}%`;
+  const number_percent1 = document.querySelector(".container .number_percent1");
+  number_percent1.innerHTML = number + "%";
 }
-
-/* -------------- */
-function spinner2(percent) {
-  let spinner = document.getElementById("spinner3");
-
-  let ctx = spinner.getContext("2d");
-  let width = spinner.width;
-  let height = spinner.height;
-  let degrees = 0;
-  let new_degrees = 0;
-  let difference = 0;
-  let color = "blue";
-  let bgcolor = "#ccc";
-  let text;
-  let animation_loop, redraw_loop;
-  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
-  gradient.addColorStop("0", "#227df9");
-  gradient.addColorStop("0.25", "#7462f9");
-  gradient.addColorStop("0.5", "#df3ef8");
-  gradient.addColorStop("1.0", "#227df9");
-
-  function init() {
-    ctx.clearRect(0, 0, width, height);
-
-    ctx.beginPath();
-    ctx.strokeStyle = bgcolor;
-    ctx.lineWidth = 50;
-    ctx.arc(width / 2, width / 2, 100, 0, Math.PI * 2, false);
-    ctx.stroke();
-    let radians = (degrees * Math.PI) / 180;
-
-    ctx.beginPath();
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 50;
-    ctx.arc(
-      width / 2,
-      height / 2,
-      100,
-      0 - (90 * Math.PI) / 180,
-      radians - (90 * Math.PI) / 180,
-      false
-    );
-    ctx.stroke();
-    ctx.fillStyle = gradient;
-    ctx.font = "40px arial";
-    text = Math.floor((degrees / 360) * 100) + "%";
-    text_width = ctx.measureText(text).width;
-    ctx.fillText(text, width / 2 - text_width / 2, height / 2 + 15);
-  }
-
-  function draw(percent) {
-    if (typeof animation_loop != undefined) clearInterval(animation_loop);
-    new_degrees = Math.ceil(percent * 3.6);
-    difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 1 / difference);
-  }
-
-  function animate_to() {
-    if (degrees == new_degrees) { 
-      clearInterval(animation_loop)
-      window.addEventListener('scroll', processChange)
-    }
-    else if (degrees < new_degrees) { 
-      degrees++;
-      window.removeEventListener('scroll', processChange)
-    }
-    else degrees--;
-    init();
-  }
-
-  draw(percent);
+function percent2(number) {
+  c2.style.strokeDasharray = `${number} 100`;
+  const number_percent2 = document.querySelector(".container .number_percent2");
+  number_percent2.innerHTML = number + "%";
+  //   t2.textContent = `${number}%`;
 }
-
-/* -------------- */
-function spinner3(percent) {
-  let spinner = document.getElementById("spinner4");
-
-  let ctx = spinner.getContext("2d");
-  let width = spinner.width;
-  let height = spinner.height;
-  let degrees = 0;
-  let new_degrees = 0;
-  let difference = 0;
-  let color = "blue";
-  let bgcolor = "#ccc";
-  let text;
-  let animation_loop, redraw_loop;
-  let gradient = ctx.createLinearGradient(0, 0, 70, 470);
-  gradient.addColorStop("0", "#227df9");
-  gradient.addColorStop("0.25", "#7462f9");
-  gradient.addColorStop("0.5", "#df3ef8");
-  gradient.addColorStop("1.0", "#227df9");
-
-  function init() {
-    ctx.clearRect(0, 0, width, height);
-
-    ctx.beginPath();
-    ctx.strokeStyle = bgcolor;
-    ctx.lineWidth = 50;
-    ctx.arc(width / 2, width / 2, 100, 0, Math.PI * 2, false);
-    ctx.stroke();
-    let radians = (degrees * Math.PI) / 180;
-
-    ctx.beginPath();
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 50;
-    ctx.arc(
-      width / 2,
-      height / 2,
-      100,
-      0 - (90 * Math.PI) / 180,
-      radians - (90 * Math.PI) / 180,
-      false
-    );
-    ctx.stroke();
-    ctx.fillStyle = gradient;
-    ctx.font = "40px arial";
-    text = Math.floor((degrees / 360) * 100) + "%";
-    text_width = ctx.measureText(text).width;
-    ctx.fillText(text, width / 2 - text_width / 2, height / 2 + 15);
-  }
-
-  function draw(percent) {
-    if (typeof animation_loop != undefined) clearInterval(animation_loop);
-    new_degrees = Math.ceil(percent * 3.6);
-    difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 1 / difference);
-  }
-
-  function animate_to() {
-    if (degrees == new_degrees) { 
-      clearInterval(animation_loop)
-      window.addEventListener('scroll', processChange)
-    }
-    else if (degrees < new_degrees) { 
-      degrees++;
-      window.removeEventListener('scroll', processChange)
-    }
-    else degrees--;
-    init();
-  }
-
-  draw(percent);
+function percent3(number) {
+  c3.style.strokeDasharray = `${number} 100`;
+  const number_percent3 = document.querySelector(".container .number_percent3");
+  number_percent3.innerHTML = number + "%";
+  //   t3.textContent = `${number}%`;
+}
+function percent4(number) {
+  c4.style.strokeDasharray = `${number} 100`;
+  const number_percent4 = document.querySelector(".container .number_percent4");
+  number_percent4.innerHTML = number + "%";
+  //   t4.textContent = `${number}%`;
 }
