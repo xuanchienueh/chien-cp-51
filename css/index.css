@@ -683,7 +683,10 @@ body {
     display: flex;
     align-items: center;
   }
-
+  #outcomes_study .track_tabs .tab-content { 
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
   #outcomes_study .track_tabs .tab-content .bg-tab-content {
     display: none;
   }
@@ -704,6 +707,7 @@ body {
   /* css phần career_service */
   #career_service {
     padding: 30px;
+    margin-top: 0 !important;
   }
 
   #career_service .title_content > h1 {
