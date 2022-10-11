@@ -55,7 +55,7 @@ tabs.forEach((tab, index) => {
 arrow_left.onclick = function () {
   number_index = number_index - 1;
   if (number_index < 0) {
-    number_index = 0;
+    number_index = tabs.length - 1;
   }
   if (number_index >= 0) {
     $("#outcomes_study .track_tabs .tab-item.active").classList.remove(
@@ -78,8 +78,8 @@ arrow_left.onclick = function () {
 
 arrow_right.onclick = function () {
   number_index++;
-  if (number_index >= tabs.length - 1) {
-    number_index = tabs.length - 1;
+  if (number_index > tabs.length - 1) {
+    number_index = 0;
   }
   if (number_index < tabs.length) {
     $("#outcomes_study .track_tabs .tab-item.active").classList.remove(

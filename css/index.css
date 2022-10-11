@@ -19,12 +19,12 @@ body {
 }
 
 #job_page .header {
-  background-image: url(../img/bg_header.webp);
+  background-image: url('https://brainstation.io/images/v3/get-hired/header.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   color: #fff;
-  margin-top: -7.42857143rem;
+  
   padding: 13.14285714rem 0 7.42857143rem;
   position: relative;
 }
@@ -69,9 +69,8 @@ body {
 #job_page .header .content .header__apply {
   align-items: center;
   -webkit-appearance: none;
-  background-color: #1358db;
   border: 1px solid #1358db;
-  border-radius: 3px;
+  border-radius: 4px;
   color: #fff;
   display: inline-flex;
   flex-direction: row;
@@ -87,6 +86,18 @@ body {
   transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  background-size: 250% auto;
+  background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+  transition: all 0.5s ease;
+  transition-timing-function: ease, ease;
+}
+#job_page .header .content .header__apply:hover { 
+  background-position: right center;
+}
+#job_page .header .content .header__apply > i { 
+  margin-left: 12px;
+  font-weight: 900;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=index.css.map */
@@ -237,8 +248,8 @@ body {
 }
 #statistical .container .bg .circle-small > span {
   font-size: 30px;
-  background: -webkit-linear-gradient(#e91e63, #673ab7);
-  background: linear-gradient(#e91e63, #673ab7);
+  background: -webkit-linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+  background: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -329,7 +340,7 @@ body {
 #outcomes_study .track_tabs .tab-content .group_button button {
   padding: 22px 26px;
   font-size: 24px;
-  border: 1px solid transparent;
+  border: none;
   color: #fff;
   outline: none;
   transition: all ease-in-out 0.5s;
@@ -367,10 +378,20 @@ body {
   margin-right: 6px;
   cursor: pointer;
   transition: all 0.7s ease;
-  background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+  background: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+#outcomes_study .track_tabs .tab-item::after { 
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #eeeeee;
+  z-index: -1;
 }
 
 #outcomes_study .track_tabs .tab-item span {
@@ -385,8 +406,16 @@ body {
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
 }
-
 #outcomes_study .track_tabs .tab-item:last-child {
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+#outcomes_study .track_tabs .tab-item:first-child::after {
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+#outcomes_study .track_tabs .tab-item:last-child::after {
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
 }
@@ -777,7 +806,6 @@ body {
 }
 
 #career_service .content_main .item .col-left > img {
-  /* width: 40%; */
   height: 80px;
 }
 
