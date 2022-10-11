@@ -61,26 +61,26 @@ function animateNumber(
 }
 
 function percent1(number) {
-  c1.style.strokeDasharray = `${number} 100`;
+  c1 ? c1.style.strokeDasharray = `${number} 100`: null;
   //   t1.textContent = `${number}%`;
   const number_percent1 = document.querySelector(".container .number_percent1");
-  number_percent1.innerHTML = number + "%";
+ number_percent1 ? number_percent1.innerHTML = number + "%" : null;
 }
 function percent2(number) {
-  c2.style.strokeDasharray = `${number} 100`;
+  c2 ? c2.style.strokeDasharray = `${number} 100` : null;
   const number_percent2 = document.querySelector(".container .number_percent2");
-  number_percent2.innerHTML = number + "%";
+  number_percent2 ? number_percent2.innerHTML = number + "%" : null
   //   t2.textContent = `${number}%`;
 }
 function percent3(number) {
-  c3.style.strokeDasharray = `${number} 100`;
+  c3 ? c3.style.strokeDasharray = `${number} 100` : null;
   const number_percent3 = document.querySelector(".container .number_percent3");
-  number_percent3.innerHTML = number + "%";
+  number_percent3 ? number_percent3.innerHTML = number + "%" : null
   //   t3.textContent = `${number}%`;
 }
 function percent4(number) {
-  c4.style.strokeDasharray = `${number} 100`;
+  c4 ? c4.style.strokeDasharray = `${number} 100` : null;
   const number_percent4 = document.querySelector(".container .number_percent4");
-  number_percent4.innerHTML = number + "%";
+  number_percent4 ? number_percent4.innerHTML = number + "%" : null
   //   t4.textContent = `${number}%`;
 }
