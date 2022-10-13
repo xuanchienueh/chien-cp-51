@@ -91,7 +91,6 @@
   cursor: pointer;
   transition: all 0.7s ease;
   background: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
-  ;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

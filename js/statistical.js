@@ -36,7 +36,6 @@ window.onload = () => {
   let timeOutId = setTimeout(() => {
     window.addEventListener("scroll", () => {
 
-
       if (window.innerWidth > 992) {
         if (html.scrollTop > itemPercents0 - itemPercent_height - 200 && html.scrollTop < itemPercents0 - 200) {
           processChange1()
@@ -47,12 +46,12 @@ window.onload = () => {
       }
 
       if (window.innerWidth <= 992 && window.innerWidth > 767) {
-        if (html.scrollTop > itemPercents0 - 300 && html.scrollTop < itemPercents0 - 200) {
+        if (html.scrollTop > itemPercents0 - 300 && html.scrollTop < itemPercents0 - 200  ) {
           processChange1()
         }
 
 
-        if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100) {
+        if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100  ) {
           processChange2()
         }
       }
