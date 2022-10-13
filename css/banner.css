@@ -1,4 +1,7 @@
-
+#job_page { 
+  margin-top: -50px;
+ 
+}
 #job_page .container {
     margin: 0 auto;
   }
@@ -9,7 +12,6 @@
     background-size: cover;
     background-position: top;
     color: #fff;
-    
     padding: 100px 0;
     position: relative;
   }
@@ -24,34 +26,43 @@
   }
   
   #job_page .header .content {
-    max-width: 36rem;
+    max-width: 600px;
     position: relative;
     z-index: 2;
   }
   
   #job_page .header .content .header__title {
-    font-size: 3.42857143rem;
+    font-size: 32px;
     font-stretch: normal;
     font-style: normal;
-    font-weight: 600;
     letter-spacing: normal;
-    line-height: 1.02;
-    margin-bottom: 1.71428571rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
     text-shadow: 0 1px 3px rgba(19, 23, 33, 0.304);
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
   }
   #job_page .header .content .header__title.special { 
     color: #FFCF00;
   }
   
   #job_page .header .content .header__description {
-    font-size: 1.14285714rem;
+    font-size: 18px;
     font-weight: 600;
-    line-height: 1.71428571rem;
-    margin-bottom: 2.28571429rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+
   }
   
   #job_page .header .content .header__description span {
     color: #ffcf00;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
   }
   
   #job_page .header .content .header__apply {
@@ -61,13 +72,13 @@
     color: #fff;
     display: inline-flex;
     flex-direction: row;
-    font-size: 1.071rem;
+    font-size: 16px;
     font-stretch: normal;
     font-style: normal;
     font-weight: 600;
     justify-content: center;
     letter-spacing: normal;
-    line-height: 1.1rem;
+    line-height: 1.3;
     padding: 15px 24px;
     text-align: center;
     transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1),
@@ -85,4 +96,12 @@
     margin-left: 12px;
     font-weight: 900;
     font-size: 18px;
+  }
+
+ 
+  @media screen and (max-width: 991px) {
+    .bannner_main_page  .zn_section_size.full_width { 
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
   }

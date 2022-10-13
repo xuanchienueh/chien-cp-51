@@ -15,17 +15,6 @@ let valuePercent2 = 77
 let valuePercent3 = 87
 let valuePercent4 = 97
 let percent_start = 0;
-const html = document.documentElement;
-const itemPercents = document.querySelectorAll('#statistical .container .bg')
-
-function getOffset(el) {
-  const rect = el.getBoundingClientRect();
-  return rect.top + window.scrollY
-}
-const itemPercents0 = Math.floor(getOffset(itemPercents[0]));
-const itemPercents2 = Math.floor(getOffset(itemPercents[2]));
-// console.log(itemPercents0, itemPercents2)
-let itemPercent_height = itemPercents[0].clientHeight
 
 
 window.onload = () => {
@@ -33,45 +22,14 @@ window.onload = () => {
   animateNumber(valuePercent2, 1000, 0, percent2);
   animateNumber(valuePercent3, 1000, 0, percent3);
   animateNumber(valuePercent4, 1000, 0, percent4);
-  let timeOutId = setTimeout(() => {
+  let timeOutId =setTimeout(() => { 
     window.addEventListener("scroll", () => {
-
-
-      if (window.innerWidth > 992) {
-        if (html.scrollTop > itemPercents0 - itemPercent_height - 200 && html.scrollTop < itemPercents0 - 200) {
-          processChange1()
-        }
-        if (html.scrollTop > itemPercents2 - itemPercent_height - 200 && html.scrollTop < itemPercents2) {
-          processChange2()
-        }
-      }
-
-      if (window.innerWidth <= 992 && window.innerWidth > 767) {
-        if (html.scrollTop > itemPercents0 - 300 && html.scrollTop < itemPercents0 - 200) {
-          processChange1()
-        }
-
-
-        if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100) {
-          processChange2()
-        }
-      }
-
-      if (window.screenTop <= 767) {
-        if (html.scrollTop > itemPercents0 - 300 && html.scrollTop < itemPercents0) {
-          processChange1()
-        }
-        if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100) {
-          processChange2()
-        }
-      }
-
-
+      processChange();
     });
-  }, 2000)
+  },2000)
 }
 
-function debounce(func, timeout = 500) {
+function debounce(func, timeout = 700) {
   let timer;
   return (...args) => {
     clearTimeout(timer);
@@ -80,31 +38,21 @@ function debounce(func, timeout = 500) {
     }, timeout);
   };
 }
-function onScroll() {
-  animateNumber(valuePercent1, 1000, 0, percent1);
-  animateNumber(valuePercent2, 1000, 0, percent2);
-  animateNumber(valuePercent3, 1000, 0, percent3);
-  animateNumber(valuePercent4, 1000, 0, percent4);
 
-}
 function onScroll1() {
   animateNumber(valuePercent1, 1000, 0, percent1);
   animateNumber(valuePercent2, 1000, 0, percent2);
-}
-function onScroll2() {
   animateNumber(valuePercent3, 1000, 0, percent3);
   animateNumber(valuePercent4, 1000, 0, percent4);
 }
 
-var processChange1 = debounce(() => onScroll1());
-var processChange2 = debounce(() => onScroll2());
-var processChange = debounce(() => onScroll());
+const processChange = debounce(() => onScroll1());
 
 
 
 function animateNumber(
   finalNumber,
-  duration = 1000,
+  duration = 2000,
   startNumber = 0,
   callback
 ) {

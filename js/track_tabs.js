@@ -1,7 +1,19 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+function debounce(func, timeout = 1000) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+
+let timerID_afterClickTab;
 let autoPlay = true;
+let timer;
 let number_index = 0;
 const tabs = $$("#outcomes_study .track_tabs .tab-item");
 const panes = $$("#outcomes_study .track_tabs .tab-pane");
@@ -13,19 +25,19 @@ const tab_content = $("#outcomes_study .track_tabs .tab-content");
 const group_button = $(
   "#outcomes_study .track_tabs .tab-content .group_button"
 );
-tabs[0].onclick = () => {
+tabs ? tabs[0].onclick = () => {
   $("#outcomes_study .track_tabs .tab-item.active").classList.remove("active");
   $("#outcomes_study .track_tabs .tab-pane.active").classList.remove("active");
 
   tabs[0].classList.add("active");
   panes[0].classList.add("active");
   number_index = 0;
-};
-
-tabs.forEach((tab, index) => {
+} : null
+tabs ? tabs.forEach((tab, index) => {
   const pane = panes[index];
 
-  tab.onclick = function () {
+
+  tab ? tab.onclick = function () {
     number_index = index;
     $("#outcomes_study .track_tabs .tab-item.active").classList.remove(
       "active"
@@ -33,26 +45,33 @@ tabs.forEach((tab, index) => {
     $("#outcomes_study .track_tabs .tab-pane.active").classList.remove(
       "active"
     );
-
-    tab.classList.add("active");
-    pane.classList.add("active");
-  };
-
-  /* xử lý phần onhover */
-  tab.onmouseover = function () {
     autoPlay = false;
     timer && clearInterval(timer);
-  };
-  /* xử lý phần onmouseout */
-  tab.onmouseout = function () {
-    autoPlay = true;
-    timer = setInterval(() => {
-      myTimer();
-    }, 5000);
-  };
-});
 
-arrow_left.onclick = function () {
+
+    function runAutoPlayAgain() {
+      if (timerID_afterClickTab) {
+        clearTimeout(timerID_afterClickTab)
+      }
+      timerID_afterClickTab = setTimeout(() => {
+        autoPlay = true;
+        timer = setInterval(() => {
+          myTimer();
+        }, 5000);
+      }, 2000)
+    }
+    const processChange = debounce(() => runAutoPlayAgain())
+    processChange()
+
+
+   tab ? tab.classList.add("active") : null
+    pane ? pane.classList.add("active"): null
+  } : null
+
+
+}) : null
+
+arrow_left ? arrow_left.onclick = function () {
   number_index = number_index - 1;
   if (number_index < 0) {
     number_index = tabs.length - 1;
@@ -64,8 +83,8 @@ arrow_left.onclick = function () {
     $("#outcomes_study .track_tabs .tab-pane.active").classList.remove(
       "active"
     );
-    tabs[number_index].classList.add("active");
-    panes[number_index].classList.add("active");
+    tabs ? tabs[number_index].classList.add("active") : null
+    panes ? panes[number_index].classList.add("active") : null
   }
   if (number_index === 0) {
     arrow_left.classList.remove("active");
@@ -74,9 +93,9 @@ arrow_left.onclick = function () {
     arrow_right.classList.add("active");
     arrow_left.classList.add("active");
   }
-};
+} : null;
 
-arrow_right.onclick = function () {
+arrow_right ? arrow_right.onclick = function () {
   number_index++;
   if (number_index > tabs.length - 1) {
     number_index = 0;
@@ -88,8 +107,8 @@ arrow_right.onclick = function () {
     $("#outcomes_study .track_tabs .tab-pane.active").classList.remove(
       "active"
     );
-    tabs[number_index].classList.add("active");
-    panes[number_index].classList.add("active");
+    tabs ? tabs[number_index].classList.add("active"): null
+    panes ? panes[number_index].classList.add("active"): null
   }
   if (number_index === tabs.length - 1) {
     arrow_right.classList.remove("active");
@@ -98,15 +117,14 @@ arrow_right.onclick = function () {
     arrow_right.classList.add("active");
     arrow_left.classList.add("active");
   }
-};
+} : null;
 
-let timer;
 function myTimer() {
-  arrow_right.click();
+ arrow_right && arrow_right.click()
   if (number_index === tabs.length - 1) {
     number_index = 0;
     setTimeout(() => {
-      tabs[0].click();
+      tabs && tabs[0].click()
     }, 5000);
   }
 }
@@ -118,27 +136,41 @@ if (autoPlay) {
 const pauseOnHover = $(
   "#outcomes_study .track_tabs .tab-content .bg-tab-content"
 );
+if (pauseOnHover) {
+  pauseOnHover.onmouseout = () => {
+    autoPlay = true;
+    timer = setInterval(() => {
+      myTimer();
+    }, 5000);
+  };
 
-pauseOnHover.onmouseout = () => {
-  autoPlay = true;
-  timer = setInterval(() => {
-    myTimer();
-  }, 5000);
-};
+  pauseOnHover.onmouseover = () => {
+    autoPlay = false;
+    timer && clearInterval(timer);
+    console.log( timerID_afterClickTab)
+    timerID_afterClickTab && clearInterval(timer)
+    clearInterval(timerID_afterClickTab)
+  };
+  pauseOnHover.onclick = () => {
+    autoPlay = false;
+    timer && clearInterval(timer);
+    console.log( timerID_afterClickTab)
+    timerID_afterClickTab && clearInterval(timer)
+    clearInterval(timerID_afterClickTab)
+  };
+}
 
-pauseOnHover.onmouseover = () => {
-  autoPlay = false;
-  timer && clearInterval(timer);
-};
+if (group_button) {
+  group_button.onmouseout = () => {
+    autoPlay = true;
+    timer = setInterval(() => {
+      myTimer();
+    }, 5000);
+  };
 
-group_button.onmouseout = () => {
-  autoPlay = true;
-  timer = setInterval(() => {
-    myTimer();
-  }, 5000);
-};
+  group_button.onmouseover = () => {
+    autoPlay = false;
+    timer && clearInterval(timer);
+  };
+}
 
-group_button.onmouseover = () => {
-  autoPlay = false;
-  timer && clearInterval(timer);
-};
