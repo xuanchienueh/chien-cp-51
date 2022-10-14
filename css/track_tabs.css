@@ -51,14 +51,15 @@
 }
 
 #outcomes_study .track_tabs .tab-content .group_button button {
-  padding: 22px 26px;
   font-size: 24px;
   border: none;
-  color: #fff;
   outline: none;
-  transition: all ease-in-out 0.5s;
+  color: #fff;
   background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+  padding: 22px 27px;
   cursor: pointer;
+  background-position: left;
+  background-size: 120%;
 }
 
 /* #outcomes_study .track_tabs .tab-content .group_button button.active {
@@ -86,16 +87,16 @@
   font-size: 18x;
   flex-grow: 1;
   width: 24%;
-  background-color: #eeeeee;
   margin-right: 6px;
   cursor: pointer;
   transition: all 0.7s ease;
-  background: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+  background: linear-gradient(to right, #227df9, #7462f9 , #df3ef8 );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-#outcomes_study .track_tabs .tab-item > p { 
+
+#outcomes_study .track_tabs .tab-item>p {
   text-align: center;
 }
 

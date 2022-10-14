@@ -19,8 +19,11 @@ const html = document.documentElement;
 const itemPercents = document.querySelectorAll('#statistical .container .bg')
 
 function getOffset(el) {
-  const rect = el.getBoundingClientRect();
-  return rect.top + window.scrollY
+  if ( el !== undefined ){ 
+    const rect = el.getBoundingClientRect();
+
+    return rect.top + window.scrollY
+  }
 }
 const itemPercents0 = Math.floor(getOffset(itemPercents[0]));
 const itemPercents2 = Math.floor(getOffset(itemPercents[2]));
