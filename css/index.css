@@ -87,6 +87,7 @@
   right: 0;
   width: 180px;
 }
+
 #enterpise #solution {
   display: flex;
   height: 500px;
@@ -130,6 +131,7 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 #enterpise #investing {
   padding: 50px;
 }
@@ -178,6 +180,7 @@
   bottom: 104px;
   left: -88px;
 }
+
 #enterpise #static {
   padding: 100px;
   background: #272634;
@@ -202,6 +205,7 @@
 #enterpise #static .list .item p {
   font-size: 14px;
 }
+
 #enterpise #procedure {
   padding: 50px;
 }
@@ -319,6 +323,7 @@
 #enterpise #procedure .container .list .item:last-child {
   padding-bottom: 0;
 }
+
 #enterpise #workforce {
   padding: 50px;
   background: #101d42;

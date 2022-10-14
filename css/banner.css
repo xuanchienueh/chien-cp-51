@@ -1,0 +1,220 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#banner {
+    background: #f5f8fd;
+    display: flex;
+    height: 600px;
+    padding: 50px;
+}
+
+#banner .left,
+#banner .right {
+    width: 50%;
+    height: 100%;
+}
+
+#banner .left {
+    position: relative;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+
+#banner .left h2 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    text-shadow: 0px 2px 2px #282828;
+}
+
+#banner .left p {
+    margin: 50px 0px;
+    color: #46494E;
+    line-height: 1.5;
+}
+
+#banner .left button {
+    background: #5364ff;
+    color: white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-size: 250% auto;
+    background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+    transition: all 0.5s ease;
+    transition-timing-function: ease, ease;
+}
+
+#banner .left .button>button>a {
+    text-decoration: none;
+    color: inherit;
+    padding: 15px;
+    display: block;
+}
+
+#banner .left .button>button:hover {
+    background-position: right center;
+}
+
+#banner .left button i {
+    margin-left: 10px;
+}
+
+#banner .left .title {
+    position: relative;
+}
+
+#banner .left img {
+    position: absolute;
+    top: 0;
+    right: -50px;
+}
+
+#banner .right {
+    position: relative;
+    padding: 50px 90px;
+}
+
+#banner .right .content {
+    height: 100%;
+    width: 100%;
+}
+
+#banner .right .static {
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #5364ff;
+}
+
+#banner .right .static span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+#banner .right .static p {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#banner .right .dots {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 180px;
+}
+
+@media screen and (max-width: 767px) {
+    #banner {
+        height: auto;
+        padding: 12px;
+    }
+
+    #banner .right {
+        display: none;
+    }
+
+    #banner .left img {
+        display: none;
+    }
+
+    #banner .left {
+        padding: 0;
+        width: 100%;
+    }
+
+    #banner .left h2 {
+        text-shadow: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 36px;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    #banner .left>p {
+        font-size: 20px;
+        color: #46494E;
+        text-align: center;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    #banner .left .button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #banner {
+        height: 90vh;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    #banner .right {
+        display: none;
+    }
+
+    #banner .left img {
+        display: none;
+    }
+
+    #banner .left {
+        padding: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    #banner .left h2 {
+        text-shadow: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 70px;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #000;
+    }
+
+    #banner .left>p {
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    #banner .left .button {
+        display: flex;
+        justify-content: center;
+    }
+
+    #banner .left .button>button {
+        padding: 24px 40px;
+        font-size: 18px;
+    }
+
+    #banner .left .button>button>a {
+        text-decoration: none;
+        color: inherit;
+    }
+}

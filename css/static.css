@@ -1,0 +1,25 @@
+
+#enterpise #static {
+    padding: 100px;
+    background: #272634;
+    color: white;
+  }
+  #enterpise #static .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  #enterpise #static .list .item {
+    padding: 20px;
+    background: #101d42;
+  }
+  #enterpise #static .list .item span {
+    color: #ffcf00;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  #enterpise #static .list .item p {
+    font-size: 14px;
+  }

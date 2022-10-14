@@ -1,0 +1,56 @@
+#investing {
+  padding: 50px;
+}
+
+#investing .title {
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+#investing .title span {
+  color: #05aae1;
+}
+
+#investing .content {
+  color: #333;
+  height: 431.11px;
+  margin: 70px auto 0;
+  width: 467.5px;
+  position: relative;
+  background: url("https://cutecdn.codingdojo.com/new_design_image/corporate_training/win_cycle.png") no-repeat;
+  background-size: contain;
+}
+
+#investing .content .desc {
+  width: 208px;
+  position: absolute;
+  text-align: center;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+#investing .content .desc i {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #05aae1;
+}
+
+#investing .content .desc_1 {
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  top: -50px;
+}
+
+#investing .content .desc_2 {
+  bottom: 105px;
+  right: -94px;
+}
+
+#investing .content .desc_3 {
+  bottom: 104px;
+  left: -88px;
+}
