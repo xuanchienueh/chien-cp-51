@@ -25,7 +25,7 @@ function getOffset(el) {
 const itemPercents0 = Math.floor(getOffset(itemPercents[0]));
 const itemPercents2 = Math.floor(getOffset(itemPercents[2]));
 // console.log(itemPercents0, itemPercents2)
-let itemPercent_height = itemPercents[0].clientHeight
+let itemPercent_height = itemPercents && itemPercents[0] && itemPercents[0].clientHeight
 
 
 window.onload = () => {
@@ -46,12 +46,12 @@ window.onload = () => {
       }
 
       if (window.innerWidth <= 992 && window.innerWidth > 767) {
-        if (html.scrollTop > itemPercents0 - 300 && html.scrollTop < itemPercents0 - 200  ) {
+        if (html.scrollTop > itemPercents0 - 300 && html.scrollTop < itemPercents0 - 200) {
           processChange1()
         }
 
 
-        if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100  ) {
+        if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100) {
           processChange2()
         }
       }
@@ -64,8 +64,6 @@ window.onload = () => {
           processChange2()
         }
       }
-
-
     });
   }, 2000)
 }
@@ -129,21 +127,18 @@ function animateNumber(
 
 function percent1(number) {
   c1 ? c1.style.strokeDasharray = `${number} 100` : null;
-  //   t1.textContent = `${number}%`;
   number_percent1 ? number_percent1.innerHTML = number + "%" : null;
 }
 function percent2(number) {
   c2 ? c2.style.strokeDasharray = `${number} 100` : null;
   number_percent2 ? number_percent2.innerHTML = number + "%" : null
-  //   t2.textContent = `${number}%`;
 }
 function percent3(number) {
   c3 ? c3.style.strokeDasharray = `${number} 100` : null;
   number_percent3 ? number_percent3.innerHTML = number + "%" : null
-  //   t3.textContent = `${number}%`;
 }
 function percent4(number) {
   c4 ? c4.style.strokeDasharray = `${number} 100` : null;
   number_percent4 ? number_percent4.innerHTML = number + "%" : null
-  //   t4.textContent = `${number}%`;
 }
+
