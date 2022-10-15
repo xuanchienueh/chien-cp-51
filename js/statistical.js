@@ -25,7 +25,7 @@ let valuePercent1 = 67
 let valuePercent2 = 77
 let valuePercent3 = 87
 let valuePercent4 = 97
-let valuePercent5 = 971
+let valuePercent5 = 71
 let valuePercent6 = 90
 let percent_start = 0;
 const html = document.documentElement;
@@ -46,6 +46,9 @@ window.onload = () => {
         if (html.scrollTop > itemPercents2 - itemPercent_height - 200 && html.scrollTop < itemPercents2) {
           processChange2()
         }
+        if (html.scrollTop > itemPercents4 - itemPercent_height - 200 && html.scrollTop < itemPercents4) {
+          processChange3()
+        }
       }
 
       if (window.innerWidth <= 992 && window.innerWidth > 767) {
@@ -57,6 +60,9 @@ window.onload = () => {
         if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100) {
           processChange2()
         }
+        if (html.scrollTop > itemPercents4 - itemPercent_height - 200 && html.scrollTop < itemPercents4) {
+          processChange3()
+        }
       }
 
       if (window.screenTop <= 767) {
@@ -66,6 +72,9 @@ window.onload = () => {
         if (html.scrollTop > itemPercents2 - 300 && html.scrollTop < itemPercents2 + 100) {
           processChange2()
         }
+        if (html.scrollTop > itemPercents4 - itemPercent_height - 200 && html.scrollTop < itemPercents4) {
+          processChange3()
+        }
       }
     });
   }, 2000)
@@ -73,10 +82,9 @@ window.onload = () => {
 
 
 function onScroll() {
-  animateNumber(valuePercent1, 1000, 0, percent1);
-  animateNumber(valuePercent2, 1000, 0, percent2);
-  animateNumber(valuePercent3, 1000, 0, percent3);
-  animateNumber(valuePercent4, 1000, 0, percent4);
+  onScroll1()
+  onScroll2()
+  onScroll3()
 
 }
 function onScroll1() {
@@ -87,11 +95,20 @@ function onScroll2() {
   animateNumber(valuePercent3, 1000, 0, percent3);
   animateNumber(valuePercent4, 1000, 0, percent4);
 }
+function onScroll3() {
+  animateNumber(valuePercent5, 1000, 0, percent5);
+  animateNumber(valuePercent6, 1000, 0, percent6);
+}
 
 var processChange1 = debounce(() => onScroll1());
 var processChange2 = debounce(() => onScroll2());
+var processChange3 = debounce(() => onScroll3());
 var processChange = debounce(() => onScroll());
 
+function percent(element, numberPercent, eleNumberPercent) {
+  element ? element.style.strokeDasharray = `${numberPercent} 100` : null;
+  eleNumberPercent ? eleNumberPercent.innerHTML = numberPercent + "%" : null
+}
 
 
 
@@ -112,6 +129,16 @@ function percent4(number) {
   c4 ? c4.style.strokeDasharray = `${number} 100` : null;
   number_percent4 ? number_percent4.innerHTML = number + "%" : null
 }
+function percent5(number) {
+  c5 ? c5.style.strokeDasharray = `${number} 100` : null;
+  number_percent5 ? number_percent5.innerHTML = number + "%" : null
+}
+function percent6(number) {
+  c6 ? c6.style.strokeDasharray = `${number} 100` : null;
+  number_percent6 ? number_percent6.innerHTML = number + "%" : null
+}
+
+
 
 
 function animateNumber(
