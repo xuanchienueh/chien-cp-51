@@ -1,25 +1,120 @@
+#static {
+  padding: 100px;
+  background: #272634;
+  color: white;
+}
 
-#enterpise #static {
-    padding: 100px;
-    background: #272634;
-    color: white;
+#static .list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+#static .list .item {
+  padding: 20px;
+  background: #101d42;
+}
+
+#static .list .item span {
+  color: #ffcf00;
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+  line-height: 1;
+}
+
+#static .list .item p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+#static .list .item a {
+  font-size: 14px;
+  color: #959FB2;
+  text-decoration: none;
+  position: relative;
+  margin-top: 70px;
+  display: block;
+  line-height: 1.4;
+}
+
+#static .list .item a::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #959FB2;
+}
+
+@media screen and (max-width: 767px) {
+  #static {
+    padding: 0 24px;
+    background: none;
   }
-  #enterpise #static .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+
+  #static .list {
+    display: block;
   }
-  #enterpise #static .list .item {
-    padding: 20px;
-    background: #101d42;
+
+  #static .list .item {
+    margin-bottom: 24px;
   }
-  #enterpise #static .list .item span {
-    color: #ffcf00;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: inline-block;
+
+  #static .list .item span {
+    font-size: 64px;
   }
-  #enterpise #static .list .item p {
+
+  #static .list .item p {
+    font-weight: 600;
+  }
+
+  #static .list .item a {
     font-size: 14px;
+    font-weight: 600;
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #static {
+    padding: 30px 40px;
+    background: none;
+  }
+
+
+
+  #static .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    position: relative;
+  }
+
+  #static .list .item {
+    /* width: 290px; */
+  }
+
+  #static .list .item:last-child {
+    /* position: absolute;
+    bottom: calc(-100% - 32px);
+    left: 50%;
+    transform: translateX(-50%); */
+    transform: translateX(55%);
+  }
+
+
+
+}
+
+@media screen and (min-width: 993px) {
+  #static {
+    padding: 60px 0px 60px 100px;
+  }
+
+  #static .list .item {
+    width: 90%;
+  }
+}
