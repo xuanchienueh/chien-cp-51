@@ -19,8 +19,10 @@
   margin: 70px auto 0;
   width: 467.5px;
   position: relative;
-  background: url("https://cutecdn.codingdojo.com/new_design_image/corporate_training/win_cycle.png") no-repeat;
+  background: url("https://cutecdn.codingdojo.com/new_design_image/corporate_training/win_cycle.png")
+    no-repeat;
   background-size: contain;
+  background-position: top center;
 }
 
 #investing .content .desc {
@@ -28,7 +30,10 @@
   position: absolute;
   text-align: center;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
+}
+#investing .content .desc > p {
+  margin: 0;
 }
 
 #investing .content .desc i {
@@ -53,4 +58,57 @@
 #investing .content .desc_3 {
   bottom: 104px;
   left: -88px;
+}
+
+@media screen and (max-width: 767px) {
+  #investing {
+    padding: 12px;
+  }
+
+  #investing .content {
+    width: 100%;
+    margin-top: -60px;
+    height: 431.11px;
+    position: relative;
+    background-size: cotain;
+    background-position: top center;
+  }
+  #investing .content {
+  }
+  #investing .content .desc {
+    width: 220px;
+  }
+  #investing .content .desc_1 {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    top: 5px;
+  }
+  #investing .content .desc_2 {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: 160px;
+  }
+  #investing .content .desc_2 > i {
+    display: none;
+  }
+  #investing .content .desc_3 {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    top: 300px;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+  #investing .title {
+    font-size: 40px;
+    padding: 0 120px;
+  }
+
+  #investing .content .desc_2 .tablet {
+    display: none;
+  }
 }
