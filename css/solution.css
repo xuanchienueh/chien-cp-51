@@ -57,7 +57,7 @@
     flex-direction: column;
     height: auto;
     padding: 12px;
-    margin-top: 50px;
+    margin-top: -50px;
   }
 
   #solution .content {
@@ -78,6 +78,7 @@
   #solution .content h3 {
     margin-top: 16px;
     line-height: 1.4;
+    font-size: 24px;
   }
 
   #solution .content p {

@@ -22,6 +22,7 @@
 #workforce .container .content h3.title {
   font-weight: 500;
   font-size: 30px;
+  line-height: 1.4;
 }
 
 #workforce .container .content .line {
@@ -34,6 +35,8 @@
 #workforce .container .content .desc .desc__title {
   margin: 20px 0;
   padding-right: 50px;
+  line-height: 1.4;
+
 }
 
 #workforce .container .content .desc span {
@@ -60,6 +63,7 @@
   padding: 30px;
   background-color: #343f5e;
   width: 50%;
+  border-radius: 5px;
 }
 
 #workforce .container .form form {
@@ -93,7 +97,7 @@
 }
 
 #workforce .container .form form .form__item-2 {
-  margin-left: 24px;
+  margin-left: 0;
 }
 
 #workforce .container .form form .form__item button {
@@ -106,13 +110,13 @@
   display: inline-flex;
   flex-direction: row;
   font-family: AvenirNext, Helvetica, Arial, sans-serif;
-  font-size: 1.071rem;
+  font-size: 18px;
   font-stretch: normal;
   font-style: normal;
   font-weight: 600;
   justify-content: center;
   letter-spacing: normal;
-  line-height: 1.1rem;
+  line-height: 1.4;
   padding: 15px 24px;
   text-align: center;
   transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -121,7 +125,7 @@
 
 @media screen and (max-width: 767px) {
   #workforce {
-    padding: 24px;
+    padding: 8px;
     width: 100%;
     background: #101d42;
   }
@@ -141,11 +145,30 @@
 
   #workforce .container .form form .form__item {
     grid-column-end: span 12;
+    margin-bottom: -8px;
   }
 
   #workforce .container .form form .form__item-2 {
     margin-left: 0;
   }
+
+  .workforce #eluid8c343808 {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #workforce {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #workforce .container {
+    width: 100%;
+  }
+
+  #workforce .container .content h3.title {
+    padding-right: 20px;
+  }
+}
