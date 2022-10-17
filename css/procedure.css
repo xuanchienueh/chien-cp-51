@@ -199,6 +199,10 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
+  #procedure {
+    padding: 0 28px 50px 0px;
+  }
+
   #procedure .container1 .banner {
     padding-right: 0;
     font-size: 30px;
@@ -209,7 +213,7 @@
   }
 
   #procedure .container1 .banner h3 {
-    padding: 0 80px;
+    padding: 0 64px;
   }
 
   #procedure .container1 .list .item .content .title .first_button {
