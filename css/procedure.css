@@ -1,6 +1,7 @@
 #procedure {
-  padding: 50px;
+  padding: 0 50px 50px 50px;
 }
+
 
 #procedure p.title {
   text-align: center;
@@ -10,40 +11,42 @@
   margin-bottom: 50px;
 }
 
-#procedure .container {
+#procedure .container1 {
   display: flex;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-#procedure .container .banner {
+#procedure .container1 .banner {
   padding-right: 50px;
   width: 50%;
   flex-shrink: 0;
 }
 
-#procedure .container .banner h3 {
+#procedure .container1 .banner h3 {
   font-size: 30px;
   font-weight: 500;
 }
 
-#procedure .container .banner h3 span {
+#procedure .container1 .banner h3 span {
   font-weight: 900;
   display: inline-block;
 }
 
-#procedure .container .banner img {
+#procedure .container1 .banner img {
   width: 80%;
   display: block;
   margin: 0 auto;
 }
 
-#procedure .container .list .item {
+#procedure .container1 .list .item {
   padding-bottom: 20px;
   cursor: pointer;
   display: flex;
   position: relative;
 }
 
-#procedure .container .list .item .line {
+#procedure .container1 .list .item .line {
   position: absolute;
   height: 100%;
   width: 1px;
@@ -52,11 +55,11 @@
   left: 35px;
 }
 
-#procedure .container .list .item .line.active {
+#procedure .container1 .list .item .line.active {
   width: 3px;
 }
 
-#procedure .container .list .item .number {
+#procedure .container1 .list .item .number {
   position: relative;
   z-index: 2;
   margin-top: 10px;
@@ -69,7 +72,7 @@
   justify-content: center;
 }
 
-#procedure .container .list .item .number span {
+#procedure .container1 .list .item .number span {
   background: white;
   border: 2px solid #4a4a4a;
   display: inline-block;
@@ -80,7 +83,7 @@
   border-radius: 50%;
 }
 
-#procedure .container .list .item .content {
+#procedure .container1 .list .item .content {
   cursor: pointer;
   transition: 0.3s;
   padding: 18px;
@@ -88,12 +91,12 @@
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
 }
 
-#procedure .container .list .item .content .title {
+#procedure .container1 .list .item .content .title {
   display: flex;
   align-items: center;
 }
 
-#procedure .container .list .item .content .title h3 {
+#procedure .container1 .list .item .content .title h3 {
   transition: 0.3s;
   font-weight: 500;
   font-size: 20px;
@@ -101,11 +104,11 @@
   line-height: 1.3;
 }
 
-#procedure .container .list .item .content .title:hover h3 {
+#procedure .container1 .list .item .content .title:hover h3 {
   color: #23bbbb;
 }
 
-#procedure .container .list .item .content .title button {
+#procedure .container1 .list .item .content .title button {
   cursor: pointer;
   background: none;
   border: none;
@@ -116,27 +119,27 @@
   font-size: 20px;
 }
 
-#procedure .container .list .item .content .title button>svg {
-  width: 24px;
+#procedure .container1 .list .item .content .title button>svg {
+  width: 16px;
 }
 
-#procedure .container .list .item .content .desc {
+#procedure .container1 .list .item .content .desc {
   max-height: 0;
   transition: 0.3s;
   overflow: hidden;
 }
 
-#procedure .container .list .item .content .desc h3 {
+#procedure .container1 .list .item .content .desc h3 {
   margin: 20px 0px;
   font-weight: 500;
 }
 
-#procedure .container .list .item .content .desc.active {
+#procedure .container1 .list .item .content .desc.active {
   max-height: 500px;
   line-height: 24px;
 }
 
-#procedure .container .list .item:last-child {
+#procedure .container1 .list .item:last-child {
   padding-bottom: 0;
 }
 
@@ -145,21 +148,29 @@
     padding: 12px;
   }
 
-  #procedure .container .banner,
-  #procedure .container .list .item .line {
+  #procedure .container1 .banner,
+  #procedure .container1 .list .item .line {
     display: none;
   }
 
-  #procedure .container .list .item {
+  #procedure .container1 .list .item {
     display: block;
     text-align: center;
   }
 
-  #procedure .container .list .item .number {
+  #procedure .container1 .list .item .content .desc {
+    /* max-height: fit-content; */
+  }
+
+  #procedure .container1 .list .item .content .desc.active {
+    max-height: fit-content;
+  }
+
+  #procedure .container1 .list .item .number {
     width: 100%;
   }
 
-  #procedure .container .list .item .number span {
+  #procedure .container1 .list .item .number span {
     width: 70px;
     height: 70px;
     display: flex;
@@ -168,16 +179,16 @@
     font-size: 20px;
   }
 
-  #procedure .container .list .item .content .title button i {
+  #procedure .container1 .list .item .content .title button i {
     font-weight: 900;
   }
 
-  #procedure .container .list .item .content .title h3 {
+  #procedure .container1 .list .item .content .title h3 {
     font-weight: 600;
     padding: 0 0px;
   }
 
-  #procedure .container .list .item .content .title button>svg {
+  #procedure .container1 .list .item .content .title button>svg {
     width: 14px;
   }
 
@@ -188,21 +199,36 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  #procedure .container .banner {
+  #procedure .container1 .banner {
     padding-right: 0;
     font-size: 30px;
   }
 
-  #procedure .container .list .item .number {
+  #procedure .container1 .list .item .number {
     margin-right: 4px;
   }
 
-  #procedure .container .banner h3 {
+  #procedure .container1 .banner h3 {
     padding: 0 80px;
   }
 
-  #procedure .container .list .item .content .title .first_button {
+  #procedure .container1 .list .item .content .title .first_button {
     width: 14px;
     opacity: 0;
+  }
+
+  #procedure .container1 .list .item .content .desc.active {
+    max-height: fit-content;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  #procedure .container1 .list .item .number {
+    margin-right: 16px;
+  }
+
+
+  #procedure .container1 .list .item .content .desc.active {
+    max-height: fit-content;
   }
 }

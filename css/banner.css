@@ -1,3 +1,8 @@
+.banner_page_doanhnghiep .eluid608bde78 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #banner {
     background: #f5f8fd;
     display: flex;
@@ -135,7 +140,7 @@
         text-shadow: none;
         margin-top: 0;
         margin-bottom: 0;
-        font-size: 36px;
+        font-size: 33px;
         text-align: center;
         font-weight: 700;
         line-height: 1.2;
@@ -202,7 +207,7 @@
     }
 
     #banner .left .button>button {
-        padding: 24px 40px;
+        padding: 12px 40px;
         font-size: 18px;
     }
 

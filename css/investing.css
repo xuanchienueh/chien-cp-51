@@ -115,10 +115,18 @@
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
+  #investing {
+    padding-top: 0;
+  }
+
   #investing .title {
     font-size: 40px;
     padding: 0;
     line-height: 1.5;
+    max-width: 77%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #investing .content .desc_2 .tablet {
