@@ -35,6 +35,8 @@ li {
     margin: 0;
 }
 
+/* --------- */
+
 .drop {
     overflow: hidden;
     list-style: none;
@@ -45,29 +47,26 @@ li {
     top: 48px;
 }
 
-.drop div {
-    -webkit-transform: translate(0, -100%);
-    -moz-transform: translate(0, -100%);
-    -ms-transform: translate(0, -100%);
-    transform: translate(0, -100%);
-    -webkit-transition: all 0.5s 0.1s;
-    -moz-transition: all 0.5s 0.1s;
-    -ms-transition: all 0.5s 0.1s;
-    transition: all 0.5s 0.1s;
+.drop>div {
+
+    max-height: 0px;
+
+    transition: all 1s 0.1s;
+
     position: relative;
 }
+
+.skill.active ul div {
+    max-height: 1000px;
+}
+
+/* --------- */
+
+
 
 .drop li {
     display: block;
     padding: 0;
     width: 100%;
     background: #3E8760 !important;
-}
-
-
-.skill.active ul div {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
 }

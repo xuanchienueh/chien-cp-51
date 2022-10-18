@@ -85,10 +85,10 @@
 
 #procedure .container1 .list .item .content {
   cursor: pointer;
-  transition: all 250ms linear;
   padding: 18px;
   border-radius: 12px 12px 12px 12px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
+  transition: all 1s;
 }
 
 #procedure .container1 .list .item .content .title {
@@ -126,21 +126,22 @@
 #procedure .container1 .list .item .content .desc {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.5s ease-in-out;
-
-}
-
-#procedure .container1 .list .item .content .desc h3 {
-  margin: 20px 0px;
-  font-weight: 500;
+  transition: all 0.5s;
 }
 
 #procedure .container1 .list .item .content .desc.active {
   max-height: 500px;
   line-height: 24px;
-  /* transition: all 1s linear; */
-  transition: max-height 1s ease-in-out;
 }
+
+#procedure .container1 .list .item .content .desc h3 {
+  margin: 12px 0px;
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 18px;
+}
+
+
 
 #procedure .container1 .list .item:last-child {
   padding-bottom: 0;
@@ -238,4 +239,32 @@
   #procedure .container1 .list .item .content .desc.active {
     max-height: fit-content;
   }
+}
+
+
+
+/* css cho phần trượt xuống */
+
+#procedure .drop {
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+#procedure .drop .drop-item {
+
+  max-height: 0px;
+
+  transition: all 1s 0s;
+
+  position: relative;
+}
+
+#procedure .skill.active .drop .drop-item {
+  max-height: 2000px !important;
+}
+
+#procedure .skill.active .drop {
+  height: auto;
 }
