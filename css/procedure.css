@@ -85,7 +85,7 @@
 
 #procedure .container1 .list .item .content {
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 250ms linear;
   padding: 18px;
   border-radius: 12px 12px 12px 12px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.08);
@@ -124,9 +124,10 @@
 }
 
 #procedure .container1 .list .item .content .desc {
-  max-height: 0;
-  transition: 0.3s;
   overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+
 }
 
 #procedure .container1 .list .item .content .desc h3 {
@@ -137,6 +138,8 @@
 #procedure .container1 .list .item .content .desc.active {
   max-height: 500px;
   line-height: 24px;
+  /* transition: all 1s linear; */
+  transition: max-height 1s ease-in-out;
 }
 
 #procedure .container1 .list .item:last-child {

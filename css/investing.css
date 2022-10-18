@@ -11,7 +11,7 @@
 }
 
 #investing .title span {
-  color: #05aae1;
+  color: #000;
 }
 
 #investing .content {
@@ -42,7 +42,10 @@
   font-size: 20px;
   display: inline-block;
   margin-bottom: 20px;
-  color: #05aae1;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 #investing .content .desc_1 {
@@ -65,7 +68,6 @@
 @media screen and (max-width: 767px) {
   #investing {
     padding: 12px;
-    margin-top: -50px;
   }
 
   #investing .content {
@@ -97,10 +99,6 @@
     bottom: 180px;
   }
 
-  #investing .content .desc_2>i {
-    display: none;
-  }
-
   #investing .content .desc_3 {
     position: absolute;
     right: 0;
@@ -115,10 +113,6 @@
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
-  #investing {
-    padding-top: 0;
-  }
-
   #investing .title {
     font-size: 40px;
     padding: 0;
@@ -136,7 +130,7 @@
 
 @media screen and (min-width: 993px) {
   #investing {
-    padding-right: 100px;
+    /* padding-right: 100px; */
   }
 
 }

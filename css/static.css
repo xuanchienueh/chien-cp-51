@@ -1,6 +1,5 @@
 #static {
   padding: 100px;
-  background: #272634;
   color: white;
 }
 
@@ -12,16 +11,19 @@
 
 #static .list .item {
   padding: 20px;
-  background: #101d42;
+  background: #4A4B66;
 }
 
 #static .list .item span {
-  color: #ffcf00;
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 20px;
   display: inline-block;
   line-height: 1;
+  background: linear-gradient(to right, #7462f9 35%, #df3ef8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 #static .list .item p {
@@ -100,7 +102,7 @@
   }
 
   #static .list .item:last-child {
-    transform: translateX(55%);
+    transform: translateX(58%);
   }
 
 }

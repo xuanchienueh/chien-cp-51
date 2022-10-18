@@ -6,8 +6,8 @@
 #banner {
     background: #f5f8fd;
     display: flex;
-    height: 600px;
-    padding: 50px;
+    padding: 50px 190px 100px 190px;
+
 }
 
 #banner .left,
@@ -26,7 +26,6 @@
     font-size: 40px;
     font-weight: 400;
     line-height: 50px;
-    text-shadow: 0px 2px 2px #282828;
 }
 
 #banner .left p {
@@ -68,6 +67,17 @@
     position: relative;
 }
 
+#banner .left .title .special {
+    background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+    background-size: 250% auto;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    line-height: 1.5;
+    padding: 0 8px 0 8px;
+    line-height: 60px;
+}
+
 #banner .left img {
     position: absolute;
     top: 0;
@@ -76,11 +86,10 @@
 
 #banner .right {
     position: relative;
-    padding: 50px 90px;
+    padding: 50px 0 50px 90px;
 }
 
 #banner .right .content {
-    height: 100%;
     width: 100%;
 }
 
@@ -112,8 +121,8 @@
 
 #banner .right .dots {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 30px;
+    right: -47px;
     width: 180px;
 }
 
@@ -172,6 +181,10 @@
 
     #banner .right {
         display: none;
+    }
+
+    #banner .left .title .special {
+        line-height: normal;
     }
 
     #banner .left img {

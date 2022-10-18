@@ -18,7 +18,7 @@
 
 #solution .content {
   position: relative;
-  padding: 50px;
+  padding: 50px 50px 50px 90px;
 }
 
 #solution .content h2 {
@@ -36,9 +36,25 @@
 }
 
 #solution .content p i {
-  color: #05aae1;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+  -webkit-background-clip: text;
+  background-clip: text;
   margin-right: 5px;
+  font-size: 18px;
+  font-weight: 900;
 }
+
+#solution .content p>span {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
 
 #solution .overview {
   -webkit-clip-path: polygon(22% 0, 100% 0, 100% 100%, 0 100%);
