@@ -28,7 +28,8 @@
 #workforce .container .content .line {
   width: 50px;
   height: 5px;
-  background: #ffcf00;
+  background-size: 250% auto;
+  background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
   margin: 20px 0;
 }
 
@@ -53,9 +54,13 @@
 }
 
 #workforce .container .content .desc ul li i {
-  color: #ffcf00;
   flex-shrink: 0;
   margin-right: 10px;
+  background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 #workforce .container .form {
