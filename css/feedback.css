@@ -41,8 +41,8 @@
 }
 
 #feedback .storyStudent .storyContent .item .itemIcon {
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 150px;
     padding: 20px;
     background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
     display: flex;
@@ -52,8 +52,8 @@
 }
 
 #feedback .storyStudent .storyContent .item .itemIcon .borderGradient {
-    width: 55px;
-    height: 55px;
+    width: 105px;
+    height: 105px;
     background: white;
     border-radius: 50%;
     padding: 20px;
@@ -115,13 +115,18 @@
 
 @media screen and (max-width: 1180px) {
     #feedback .storyStudent .storyContent .item .itemIcon {
-        width: 50px;
-        height: 50px;
+        width: 95px;
+        height: 95px;
     }
 
     #feedback .storyStudent .storyContent .item .itemIcon .borderGradient {
-        width: 25px;
-        height: 25px;
+        width: 55px;
+        height: 55px;
+    }
+
+    #feedback .storyStudent .storyContent .item .itemIcon .borderGradient i {
+        font-size: 24px;
+        line-height: 1;
     }
 
     #feedback .storyStudent .storyContent .item .itemText h4 {
@@ -137,6 +142,14 @@
 }
 
 @media screen and (max-width: 576px) {
+    #feedback {
+        padding: 0 8px;
+    }
+
+    #feedback .storyStudent h3 {
+        font-size: 27px;
+    }
+
     #feedback .storyStudent .storyContent .item .itemIcon {
         width: 45px;
         height: 45px;
