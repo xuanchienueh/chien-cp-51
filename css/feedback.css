@@ -88,24 +88,28 @@
 
 
 @media screen and (max-width: 1460px) {
+    #feedback {
+        padding-right: 0;
+    }
+
     #feedback .storyStudent .storyContent .item .itemIcon {
         width: 150px;
         height: 150px;
     }
 
     #feedback .storyStudent .storyContent .item .itemIcon .borderGradient {
-        width: 90px;
-        height: 90px;
+        width: 112px;
+        height: 112px;
     }
 
     #feedback .storyStudent .storyContent .item .itemText h4 {
-        font-size: 45px;
+        font-size: 40px;
         line-height: 60px;
         margin: 0;
     }
 
     #feedback .storyStudent .storyContent .item .itemText p {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     #feedback .storyStudent .storyContent .item .itemIcon .borderGradient i {
