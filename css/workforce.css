@@ -217,6 +217,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+   padding-left: 24px;
+    padding-right: 24px;
 }
 
 .custom_page_doanhnghiep .znColumnElement-innerWrapper-eluida9719e9f::before {
