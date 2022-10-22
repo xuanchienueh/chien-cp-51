@@ -1,19 +1,19 @@
-
 @media (min-width: 993px) {
-  .system_study .desktop {
+  .chien-test .system_study1 .desktop {
     margin-top: 10px;
     display: flex;
     position: relative;
     align-items: stretch;
     justify-content: space-between;
+    margin-top: -50px;
   }
 
-  .system_study .desktop .colLeft {
+  .chien-test .system_study1 .desktop .colLeft {
     position: relative;
     width: 100%;
   }
 
-  .system_study .desktop .left {
+  .chien-test .system_study1 .desktop .left {
     width: 100%;
     max-width: 650px;
     height: 100vh;
@@ -22,10 +22,10 @@
     align-items: center;
     position: unset;
     top: calc(50% - 250px);
-    transform: scale(0.8) ;
+    transform: scale(1);
   }
 
-  .system_study .desktop .nav-item {
+  .chien-test .system_study1 .desktop .nav-item {
     position: absolute;
     top: 0;
     left: 0px;
@@ -33,18 +33,19 @@
     height: 100%;
     opacity: 0;
   }
-  .system_study .desktop .nav-item:last-child.active { 
+
+  .chien-test .system_study1 .desktop .nav-item:last-child.active {
     opacity: 1;
     top: 85vh;
   }
 
-  .system_study .desktop .right {
+  .chien-test .system_study1 .desktop .right {
     width: 50%;
     height: 100%;
     position: relative;
   }
 
-  .system_study .desktop .right .section {
+  .chien-test .system_study1 .desktop .right .section {
     position: relative;
     height: 100vh;
     max-height: 500px;
@@ -53,85 +54,97 @@
     align-items: center;
     justify-content: space-around;
   }
-  .system_study .desktop .right .section:last-child { 
+
+  .chien-test .system_study1 .desktop .right .section:last-child {
     transform: translateY(-120px);
   }
 
-  .system_study .desktop .right .section .container {
+  .chien-test .system_study1 .desktop .right .section .container {
     max-width: 600px;
- transform: translateX(80px);
+    transform: translateX(30px);
   }
 
-  .system_study .mobile {
+  .chien-test .system_study1 .mobile {
     display: none;
   }
 
-  .system_study .desktop .nav-link img {
-    width: 440px;
+  .chien-test .system_study1 .desktop .nav-link img {
+    width: 100%;
     height: 500px;
     border-radius: 4px;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
-.system_study .desktop .right .section a {
+.chien-test .system_study1 .desktop .right .section a {
   color: black;
 }
 
-.system_study .desktop .nav-item.active a {
+.chien-test .system_study1 .desktop .nav-item.active a {
   color: #db7676;
 }
 
-.system_study .desktop .nav-item.active {
+.chien-test .system_study1 .desktop .nav-item.active {
   display: block;
   opacity: 1;
 }
 
-.system_study .desktop #about h2,
-.system_study .desktop #services h2,
-.system_study .desktop #contact h2 {
+.chien-test .system_study1 .desktop #about h2,
+.chien-test .system_study1 .desktop #services h2,
+.chien-test .system_study1 .desktop #contact h2 {
   margin-bottom: 20px;
   font-size: 40px;
 }
 
-.system_study .desktop .lead {
+.chien-test .system_study1 .desktop .lead {
   margin-bottom: 30px;
   font-size: 18px;
   line-height: 1.6;
 }
 
+.chien-test .system_study1 .desktop .left .nav-link {
+  padding: 0px 10px !important;
+  background-color: transparent;
+}
+
+.cyber_learning_system .chien-test .system_study1 h2 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
 @media (max-width: 992px) {
-  .system_study .desktop {
+  .chien-test .system_study1 .desktop {
     display: none;
   }
 
-  .system_study .mobile {
+  .chien-test .system_study1 .mobile {
     padding: 20px;
   }
 
-  .system_study .mobile .nav-mobile {
+  .chien-test .system_study1 .mobile .nav-mobile {
     list-style-type: none;
+    padding: 0;
   }
 
-  .system_study .mobile .nav-mobile .nav-item {
-    margin-bottom: 100px;
+  .chien-test .system_study1 .mobile .nav-mobile .nav-item {
+    margin-bottom: 20px;
   }
 
-  .system_study .mobile .nav-mobile .nav-item .nav-link {
+  .chien-test .system_study1 .mobile .nav-mobile .nav-item .nav-link {
     display: block;
   }
 
-  .system_study .mobile .nav-link-mobile img {
+  .chien-test .system_study1 .mobile .nav-link-mobile img {
     width: 100%;
     object-fit: cover;
     border-radius: 4px;
   }
 
-  .system_study .mobile .section-mobile h2 {
+  .chien-test .system_study1 .mobile .section-mobile h2 {
     margin: 20px 0;
   }
 
-  .system_study .mobile .section-mobile a {
+  .chien-test .system_study1 .mobile .section-mobile a {
     margin: 20px 0;
     display: block;
     color: black;

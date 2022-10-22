@@ -1,62 +1,100 @@
+let break_number_item = 0;
+let distance_top_element = 0;
+const sections1 = document.querySelectorAll(".chien-test .system_study1 .desktop .section");
+const containers = document.querySelectorAll(".chien-test .system_study1 .desktop .section .container")
+const navItems1 = document.querySelectorAll(".chien-test .system_study1 .desktop .nav-link");
+const class_navItems1 = document.querySelectorAll(".chien-test .system_study1  .desktop .colLeft .nav-item");
+if (navItems1) {
+  switch (navItems1.length) {
+    case 9: {
+      break_number_item = 3597
+      distance_top_element = 1700
+      break;
+    };
+    case 8: {
+      break_number_item = 3090
+      distance_top_element = 1450
+      break;
+    };
+    case 7: {
+      break_number_item = 2610
+      distance_top_element = 1274
+      break;
+    };
 
-const sections = document.querySelectorAll(".system_study .desktop .section");
-const system_study = document.querySelector('.system_study')
-const navItems = document.querySelectorAll(".system_study .desktop .nav-link");
-const class_navItems = document.querySelectorAll(".system_study .desktop .nav-item")
-function getOffset(el) {
-    const rect = el.getBoundingClientRect();
-    return rect.top + window.scrollY
+    case 6: {
+      break_number_item = 2052
+      distance_top_element = 1032
+      break;
+    };
+    case 5: {
+      break_number_item = 1701.5
+      distance_top_element = 860
+      break;
+    };
+    default: {
+      break_number_item = 700
+      distance_top_element = 500
+    }
+
   }
+}
+// console.log('sections1.length', sections1.length)
 
-let bodyRect = document.body.getBoundingClientRect();
 
+
+
+function getOffset1(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top + window.scrollY;
+}
+
+let bodyRect1 = document.body.getBoundingClientRect();
 
 window.addEventListener(
   "scroll",
   function () {
-    let checkToView = null
-    if(document.querySelector(".system_study .desktop")){
+    let checkToView = null;
+    if (document.querySelector(".chien-test .system_study1 .desktop")) {
       checkToView = document
-      .querySelector(".system_study .desktop")
-      .getBoundingClientRect().top;
-       }
-   
-      // console.log( 'checkToView', checkToView )
+        .querySelector(".chien-test .system_study1 .desktop")
+        .getBoundingClientRect().top;
+    }
+
+    // console.log('checkToView', checkToView)
+
     if (checkToView !== null) {
-      if (checkToView < 0 && checkToView > -700) {
-        document.querySelector(".system_study .desktop .left").style.position = "fixed";
-        document.querySelector('.system_study .desktop .left').style.transform = 'scale(0.8) translateX(-30px)'
-        class_navItems[class_navItems.length-1].style.top = '7vh'
-
-      } else if (checkToView < -700) {
-        document.querySelector(".system_study .desktop .left").style.position = "relative";
-        document.querySelector('.system_study .desktop .left').style.transform = 'scale(0.8) ';
-        class_navItems[class_navItems.length-1].style.top = '70vh'
-
+      if (checkToView < 0 && checkToView > -(break_number_item)) {
+        document.querySelector(".chien-test .system_study1 .desktop .left").style.position = "fixed";
+        document.querySelector(".chien-test .system_study1 .desktop .left").style.transform = "scale(0.8) translateX(calc(-15% - 15px))";
+        class_navItems1[class_navItems1.length - 1].style.top = "7vh";
+      } else if (checkToView < -(break_number_item)) {
+        document.querySelector(".chien-test .system_study1 .desktop .left").style.position = "relative";
+        document.querySelector(".chien-test .system_study1 .desktop .left").style.transform = "scale(1.1)";
+        class_navItems1[class_navItems1.length - 1].style.top = `${distance_top_element}px`;
       } else if (checkToView > 0) {
-          document.querySelector(".system_study .desktop .left").style.position = "unset";
-        document.querySelector('.system_study .desktop .left').style.transform = 'scale(0.8)';
+        document.querySelector(".chien-test .system_study1 .desktop .left").style.position = "unset";
+        document.querySelector(".chien-test .system_study1 .desktop .left").style.transform = "scale(1.1)";
       }
     }
-    sections.forEach((section, index) => {
+    sections1.forEach((section, index) => {
       const height = section.offsetHeight;
-      let top = Math.floor(getOffset(section)) - 300 ;
-
+      let top = Math.floor(getOffset1(section)) - 300;
       const html = document.documentElement;
 
-      navItems.forEach((navItem) => {
-        const hrefNav = navItem.href.match(/#[a-zA-Z]+/)[0];
-
+      navItems1.forEach((navItem) => {
+        const hrefNav = navItem.getAttribute("data-target").match(/#[a-zA-Z0-9]+/)[0];
         const idSection = "#" + section.id;
-        // console.log( 'top: ' + top )
-        // console.log( 'html.scrollTop: ' + html.scrollTop)
+        // console.log('top: ', top)
+        // console.log('html.scrollTop: ', html.scrollTop)
+
         if (html.scrollTop >= top) {
           hrefNav === idSection
             ? navItem.parentElement.classList.add("active")
             : navItem.parentElement.classList.remove("active");
-        }         
+        }
       });
+
     });
-  },
-  { passive: true }
+  }
 );
