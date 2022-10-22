@@ -4,6 +4,7 @@ var maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 console.log('maxScrollLeft', maxScrollLeft)
 
 let x = 0
+let isWheel = true
 
 function onWheel(evt) {
   evt.preventDefault();
@@ -13,17 +14,22 @@ function onWheel(evt) {
 
   // console.log(scrollContainer.scrollLeft);
   console.log(x)
-  if (x > maxScrollLeft) {
+  if (x > maxScrollLeft || x === 0) {
     pauseWheel()
   }
 }
+scrollContainer.onmouseover = () => {
+  isWheel = true
+  console.log(243)
+}
+isWheel && scrollContainer.addEventListener("wheel", onWheel, { smooth: true });
 
-scrollContainer.addEventListener("wheel", onWheel, { smooth: true });
+
 
 
 
 
 function pauseWheel() {
   scrollContainer.removeEventListener('wheel', onWheel)
-
+  isWheel = false
 }
