@@ -1,17 +1,29 @@
 const scrollContainer = document.querySelector("div.container");
-console.log(scrollContainer.scrollWidth);
-let numberScroll = 0;
+const elementScroll = document.querySelectorAll('.container section')
+var maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+console.log('maxScrollLeft', maxScrollLeft)
 
-scrollContainer.addEventListener("wheel", (evt) => {
+let x = 0
+
+function onWheel(evt) {
   evt.preventDefault();
   scrollContainer.scrollLeft += evt.deltaY;
-  //   console.log(scrollContainer.wheelDeltaX);
-  //   console.log(scrollContainer.scrollLeft);
-  //   console.log(evt.scrollX);
-  console.log(evt.layerX);
-});
-// window.addEventListener("scroll", function (event) {
-//   var scroll_y = this.scrollY;
-//   var scroll_x = this.scrollX;
-//   console.log(scroll_x, scroll_y);
-// });
+  // console.log(evt)
+  x += evt.deltaY
+
+  // console.log(scrollContainer.scrollLeft);
+  console.log(x)
+  if (x > maxScrollLeft) {
+    pauseWheel()
+  }
+}
+
+scrollContainer.addEventListener("wheel", onWheel, { smooth: true });
+
+
+
+
+function pauseWheel() {
+  scrollContainer.removeEventListener('wheel', onWheel)
+
+}
