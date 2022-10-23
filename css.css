@@ -1,34 +1,36 @@
-html,
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.container {
+.scrollSamsung {
   overflow-x: hidden;
   display: flex;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
-h1 {
+.scrollSamsung h1 {
   margin: 0;
   padding: 0;
 }
 
-section {
+.scrollSamsung section {
   /* width: 1800px; */
   min-width: 700px;
   height: 90vh;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  font-size: 4ch;
+  font-size: 16px;
 }
 
-section:nth-child(even) {
+.scrollSamsung section img {
+  width: 90%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.scrollSamsung section:nth-child(even) {
   background-color: #1b2a49;
   color: white;
+}
+
+.img {
+  width: 100%;
 }

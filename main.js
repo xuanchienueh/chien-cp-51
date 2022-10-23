@@ -1,12 +1,15 @@
-const scrollContainer = document.querySelector("div.container");
-const chieucao = scrollContainer.offsetHeight;
-console.log(scrollContainer.offsetTop);
-console.log("chieucao", chieucao);
-const elementScroll = document.querySelectorAll(".container section");
+
+const scrollContainer = document.querySelector("div.scrollSamsung");
+const chieucao12 = scrollContainer.offsetHeight;
+// console.log(scrollContainer.offsetTop);
+// console.log("chieucao12", chieucao12);
+const elementScroll = document.querySelectorAll(".scrollSamsung section");
 var maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-console.log("maxScrollLeft", maxScrollLeft);
+// console.log("maxScrollLeft", maxScrollLeft);
 // let checkToView = scrollContainer.getBoundingClientRect().top;
 // console.log(checkToView);
+const html_1 = document.documentElement;
+
 
 let x = 0;
 let isWheel = true;
@@ -14,36 +17,39 @@ let isWheel = true;
 function onWheel(evt) {
   evt.preventDefault();
   scrollContainer.scrollLeft += evt.deltaY;
-  scrollContainer.scrollIntoView();
+  // scrollContainer.scrollIntoView();
 
   x += evt.deltaY;
+  console.log(scrollContainer.scrollLeft)
+  console.log(maxScrollLeft)
 
-  console.log(scrollContainer.scrollLeft);
-  // console.log(x);
-  if (Math.floor(scrollContainer.scrollLeft) == maxScrollLeft || x <= 0) {
+  // console.log(scrollContainer.scrollLeft);
+  if (Math.floor(scrollContainer.scrollLeft) == maxScrollLeft) {
     pauseWheel();
   }
+  if (x <= 0) pauseWheel()
 }
-// isWheel && scrollContainer.addEventListener("wheel", onWheel, { smooth: true });
-window.onscroll = () => {
-  const html = document.documentElement;
-  // console.log(html.scrollTop);
-  // if (
-  //   html.scrollTop >= scrollContainer.offsetTop + chieucao ||
-  //   html.scrollTop < scrollContainer.offsetTop
-  // ) {
-  //   scrollContainer.addEventListener("wheel", onWheel, { smooth: true });
-  // }
-  if (
-    html.scrollTop > scrollContainer.offsetTop - 400 &&
-    html.scrollTop < scrollContainer.offsetTop + chieucao
-  ) {
-    scrollContainer.addEventListener("wheel", onWheel, { smooth: true });
-  }
-};
+isWheel && scrollContainer.addEventListener("wheel", onWheel);
+
 
 function pauseWheel() {
   scrollContainer.removeEventListener("wheel", onWheel);
-  isWheel = false;
-  console.log("pauseWheel run");
+  // isWheel = false;
+  // console.log("pauseWheel run");
 }
+
+
+/* let lastScrollTop = 0;
+
+window.addEventListener("scroll", function () {
+  var st = window.pageYOffset || document.documentElement.scrollTop;
+
+
+  if (st > lastScrollTop && html_1.scrollTop < scrollContainer.offsetTop) {
+    scrollContainer.addEventListener("wheel", onWheel);
+  }
+  if (st < lastScrollTop && html_1.scrollTop > scrollContainer.offsetTop + chieucao12) {
+    scrollContainer.addEventListener("wheel", onWheel);
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
+}, false); */
