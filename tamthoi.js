@@ -1,68 +1,91 @@
 const scrollContainer1 = document.querySelector("div.testScrollHorizonetal");
 const eluida0b6adb5 = document.querySelector('#eluida0b6adb5')
-var maxScrollLeft1 = scrollContainer1.scrollWidth - scrollContainer1.clientWidth;
-console.log('eluida0b6adb5.offsetTop', eluida0b6adb5.offsetTop);
-console.log('eluida0b6adb5.offsetHeight', eluida0b6adb5.offsetHeight);
+var maxScrollLeft1 = scrollContainer1 && scrollContainer1.scrollWidth - scrollContainer1.clientWidth
+let phiatren = eluida0b6adb5.offsetTop
+let phiaduoi = eluida0b6adb5.offsetTop + eluida0b6adb5.offsetHeight
+// console.log('phaitren', phiatren)
+// console.log('phiaduoi', phiaduoi)
 
 
-let isIntoview = true
 function onWheel(evt) {
     evt.preventDefault();
     scrollContainer1.scrollLeft += evt.deltaY;
-    // console.log(scrollContainer1.scrollLeft)
-    // scrollContainer1.scrollIntoView(true)
+    // console.log('scrollContainer1.scrollLeft', scrollContainer1.scrollLeft)
 
     if (scrollContainer1.scrollLeft <= 0) {
-        HTMLElement.prototype.scrollIntoView = function () { }
+        window.scrollTo(0, phiatren - 350)
         removeEventListenerScrollHorizontal()
-
-
     }
-    if (Math.floor(scrollContainer1.scrollLeft) == maxScrollLeft1) {
+    // console.log('scrollLeft final', Math.round(scrollContainer1.scrollLeft))
+    // console.log('maxScrollLeft1', maxScrollLeft1)
+    if (screen.width > 992 && scrollContainer1 && Math.round(scrollContainer1.scrollLeft) == maxScrollLeft1) {
+        window.scrollTo(0, phiaduoi - 90)
         removeEventListenerScrollHorizontal()
-
-        HTMLElement.prototype.scrollIntoView = function () { }
-
+        console.log('> 99xpx')
+    }
+    if (scrollContainer1 && Math.round(scrollContainer1.scrollLeft) == maxScrollLeft1) {
+        // HTMLElement.prototype.scrollIntoView = function () { }
+        window.scrollTo(0, phiaduoi)
+        removeEventListenerScrollHorizontal()
+        // console.log(' right final')
     }
 }
 
+if (screen.width > 760) {
+    scrollContainer1 && scrollContainer1.addEventListener("wheel", onWheel)
+    window.onscroll = () => {
+        // console.log('scrollY', window.scrollY)
 
-scrollContainer1.addEventListener("wheel", onWheel)
-window.onscroll = () => {
-    console.log('scrollY', window.scrollY)
-    let indexView = eluida0b6adb5.getBoundingClientRect().top
-    // console.log('indexView', Math.floor(indexView))
-
-    if (window.scrollY <= eluida0b6adb5.offsetTop + eluida0b6adb5.offsetHeight + 100
-        && window.scrollY >= eluida0b6adb5.offsetTop - 100) {
-        scrollContainer1.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        addEventListenerScrollHorizontal()
-        console.log('add scroll intoview')
-    } else {
-        removeEventListenerScrollHorizontal()
-        HTMLElement.prototype.scrollIntoView = function () { }
+        if (window.scrollY <= phiaduoi - 100 && window.scrollY >= phiatren - 100) {
+            scrollContainer1.scrollIntoView(true)
+            scrollContainer1.getElementsByClassName.paddingBottom = '50px'
+            addEventListenerScrollHorizontal()
+            console.log('add scroll intoview')
+        } else {
+            removeEventListenerScrollHorizontal()
+        }
     }
-    /*  if (indexView <= 300 && indexView >= -100) {
-         eluida0b6adb5.scrollIntoView({ behavior: 'smooth', block: 'start' })
-         addEventListenerScrollHorizontal()
-         console.log('add scroll intoview')
-     } else {
-         removeEventListenerScrollHorizontal()
-         HTMLElement.prototype.scrollIntoView = function () { }
-     } */
-
 }
+
 
 
 
 function addEventListenerScrollHorizontal() {
-    isIntoview = true
     scrollContainer1.addEventListener("wheel", onWheel)
 }
 
 function removeEventListenerScrollHorizontal() {
-    isIntoview = false
     scrollContainer1.removeEventListener("wheel", onWheel)
 }
 
+if (screen.width <= 767) {
+    jQuery(document).ready(function ($) {
+        $(".testScrollHorizonetal").slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: '16px',
+            arrows: true,
+            prevArrow:
+                "<button type='button' class='roadmap-prev slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+            nextArrow:
+                "<button type='button' class='roadmap-next slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        });
+    });
+}
 
+
+
+// $(".testScrollHorizonetal").slick({
+//     infinite: false,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     centerMode: true,
+//     centerPadding: '40px',
+//     arrows: true,
+//     prevArrow:
+//         "<button type='button' class='roadmap-prev slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+//     nextArrow:
+//         "<button type='button' class='roadmap-next slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+// });
