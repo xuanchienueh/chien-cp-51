@@ -1,5 +1,5 @@
 const scrollContainer1 = document.querySelector("div.testScrollHorizonetal");
-const eluida0b6adb5 = document.querySelector('#eluida0b6adb5')
+const eluida0b6adb5 = document.querySelector('#eluida0b6adb5') // eluida0b6adb5 là id của section wp
 var maxScrollLeft1 = scrollContainer1 && scrollContainer1.scrollWidth - scrollContainer1.clientWidth
 let phiatren = eluida0b6adb5.offsetTop
 let phiaduoi = eluida0b6adb5.offsetTop + eluida0b6adb5.offsetHeight
@@ -25,7 +25,7 @@ function onWheel(evt) {
     }
     if (scrollContainer1 && Math.round(scrollContainer1.scrollLeft) == maxScrollLeft1) {
         // HTMLElement.prototype.scrollIntoView = function () { }
-        window.scrollTo(0, phiaduoi)
+        window.scrollTo(0, phiaduoi + 90)
         removeEventListenerScrollHorizontal()
         // console.log(' right final')
     }
@@ -33,18 +33,18 @@ function onWheel(evt) {
 
 if (screen.width > 760) {
     scrollContainer1 && scrollContainer1.addEventListener("wheel", onWheel)
-    window.onscroll = () => {
-        // console.log('scrollY', window.scrollY)
+    window.addEventListener('scroll', onWindowScroll)
+    /* window.onscroll = () => {
+        console.log('scrollY', window.scrollY)
 
         if (window.scrollY <= phiaduoi - 100 && window.scrollY >= phiatren - 100) {
             scrollContainer1.scrollIntoView(true)
-            scrollContainer1.getElementsByClassName.paddingBottom = '50px'
             addEventListenerScrollHorizontal()
             console.log('add scroll intoview')
         } else {
             removeEventListenerScrollHorizontal()
         }
-    }
+    } */
 }
 
 
@@ -52,10 +52,34 @@ if (screen.width > 760) {
 
 function addEventListenerScrollHorizontal() {
     scrollContainer1.addEventListener("wheel", onWheel)
+    window.removeEventListener('scroll', onWindowScroll)
 }
 
 function removeEventListenerScrollHorizontal() {
     scrollContainer1.removeEventListener("wheel", onWheel)
+    window.addEventListener('scroll', onWindowScroll)
+}
+function onWindowScroll() {
+    // console.log('scrollY', window.scrollY)
+    console.log('checkView', scrollContainer1.getBoundingClientRect().top)
+    let indexView = scrollContainer1.getBoundingClientRect().top
+
+    if (indexView <= 200 && indexView >= -(scrollContainer1.offsetHeight)) {
+        scrollContainer1.scrollIntoView(true)
+        addEventListenerScrollHorizontal()
+        console.log('add scroll intoview')
+
+    } else {
+        removeEventListenerScrollHorizontal()
+    }
+    /*  if (window.scrollY <= phiaduoi - 100 && window.scrollY >= phiatren - 100) {
+         scrollContainer1.scrollIntoView(true)
+         addEventListenerScrollHorizontal()
+         console.log('add scroll intoview')
+ 
+     } else {
+         removeEventListenerScrollHorizontal()
+     } */
 }
 
 if (screen.width <= 767) {
