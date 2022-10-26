@@ -6,53 +6,57 @@ let phiaduoi1 = eluidb417d3e0 && eluidb417d3e0.offsetTop + eluidb417d3e0.offsetH
 
 function onWheel1(evt) {
     evt.preventDefault();
-    if (scrollContainer2) {
-        scrollContainer2.scrollLeft += evt.deltaY;
-        scrollContainer2.scrollIntoView(true)
-    }
-    window.scrollTo(0, window.scrollY - 60)
+    scrollContainer2.scrollLeft += evt.deltaY;
     // console.log('scrollContainer2.scrollLeft', scrollContainer2.scrollLeft)
-    // console.log('scrollY', Math.round(window.scrollY))
+    scrollContainer2.scrollIntoView(true)
+    window.scrollTo(0, window.scrollY - 60)
 
-
-    if (scrollContainer2 && scrollContainer2.scrollLeft <= 0) {
+    if (scrollContainer2.scrollLeft <= 0) {
         window.scrollTo(0, phiatren1 - 250)
         removeEventListenerScrollHorizontal1()
     }
     // console.log('scrollLeft final', Math.round(scrollContainer2.scrollLeft))
     // console.log('maxScrollLeft2', maxScrollLeft2)
-
+    if (screen.width > 992 && scrollContainer2 && Math.round(scrollContainer2.scrollLeft) == maxScrollLeft2) {
+        window.scrollTo(0, phiaduoi1 + 500)
+        removeEventListenerScrollHorizontal1()
+        console.log('> 99xpx')
+    }
     if (scrollContainer2 && Math.round(scrollContainer2.scrollLeft) >= maxScrollLeft2) {
-        if (screen.width >= 992) {
-            window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight)
-            removeEventListenerScrollHorizontal1()
-        } else {
-            window.scrollTo(0, phiaduoi1 + 90)
-            removeEventListenerScrollHorizontal1()
-        }
+        // HTMLElement.prototype.scrollIntoView = function () { }
+        window.scrollTo(0, phiaduoi1 + 90)
+        removeEventListenerScrollHorizontal1()
+        // console.log(' right final')
     }
 }
-if (scrollContainer2 && screen.width > 767) {
+if (screen.width > 767) {
     scrollContainer2 && scrollContainer2.addEventListener("wheel", onWheel1)
     window.addEventListener('scroll', onWindowScroll1)
+
+
 }
 
+
+
+
 function addEventListenerScrollHorizontal1() {
-    scrollContainer2 && scrollContainer2.addEventListener("wheel", onWheel1)
+    scrollContainer2.addEventListener("wheel", onWheel1)
     window.removeEventListener('scroll', onWindowScroll1)
 }
 
 function removeEventListenerScrollHorizontal1() {
-    scrollContainer2 && scrollContainer2.removeEventListener("wheel", onWheel1)
+    scrollContainer2.removeEventListener("wheel", onWheel1)
     window.addEventListener('scroll', onWindowScroll1)
 }
 function onWindowScroll1() {
-    // console.log('checkView', Math.round(scrollContainer2.getBoundingClientRect().top))
-    // console.log('scrollY', Math.round(window.scrollY))
-    let indexView = scrollContainer2 && scrollContainer2.getBoundingClientRect().top
+    console.log('checkView', scrollContainer2.getBoundingClientRect().top)
+    let indexView = scrollContainer2.getBoundingClientRect().top
 
-    if (scrollContainer2 && indexView <= 130 && indexView >= -(scrollContainer2.offsetHeight)) {
+    if (indexView <= 130 && indexView >= -(scrollContainer2.offsetHeight)) {
+        // scrollContainer2.scrollIntoView(true)
+        // window.scrollTo(0, window.scrollY - 200)
         addEventListenerScrollHorizontal1()
+        console.log('add scroll intoview')
 
     } else {
         removeEventListenerScrollHorizontal1()
@@ -67,7 +71,7 @@ if (screen.width <= 767) {
             slidesToShow: 1,
             // slidesToScroll: 1,
             centerMode: true,
-            centerPadding: '16px',
+            centerPadding: "16px",
             arrows: true,
             prevArrow:
                 "<button type='button' class='roadmap-prev slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
@@ -76,3 +80,5 @@ if (screen.width <= 767) {
         });
     });
 }
+
+
