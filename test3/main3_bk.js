@@ -3,7 +3,7 @@ const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_viecl
 var maxScrollLeft2 = scrollContainer2 && scrollContainer2.scrollWidth - scrollContainer2.clientWidth
 let phiatren1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop
 let phiaduoi1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop + scrollHorizontal_vieclam.offsetHeight
-let body1 = document.querySelector('body')
+let body = document.querySelector('body')
 
 function onWheel1(evt) {
     evt.preventDefault();
@@ -11,8 +11,9 @@ function onWheel1(evt) {
         scrollContainer2.scrollLeft += evt.deltaY;
         scrollContainer2.scrollIntoView(true)
     }
-    window.scrollTo(0, window.scrollY - 120)
+    window.scrollTo(0, window.scrollY - 60)
     // console.log('scrollContainer2.scrollLeft', scrollContainer2.scrollLeft)
+    // console.log('scrollY', Math.round(window.scrollY))
 
 
     if (scrollContainer2 && scrollContainer2.scrollLeft <= 0) {
@@ -23,8 +24,6 @@ function onWheel1(evt) {
     // console.log('maxScrollLeft2', maxScrollLeft2)
 
     if (scrollContainer2 && Math.round(scrollContainer2.scrollLeft) >= maxScrollLeft2) {
-        body1.style.overflowY = 'hidden'
-        body1.style.height = '100%'
         if (screen.width >= 992) {
             window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight)
             removeEventListenerScrollHorizontal1()
@@ -32,9 +31,6 @@ function onWheel1(evt) {
             window.scrollTo(0, phiaduoi1 + 90)
             removeEventListenerScrollHorizontal1()
         }
-        setTimeout(() => {
-            body1.style.overflowY = 'scroll'
-        }, 700)
     }
 }
 if (scrollContainer2 && screen.width > 767) {
