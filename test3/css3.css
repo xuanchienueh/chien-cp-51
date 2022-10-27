@@ -1,3 +1,7 @@
+.vieclam_scrollHorizontal {
+    background-color: #fff;
+}
+
 .vieclam_scrollHorizontal .scrollHorizonetal {
     scroll-margin-top: 200px;
     width: 100% !important;
@@ -26,7 +30,7 @@ a {
 
 .vieclam_scrollHorizontal .scrollHorizonetal section.section-item {
     display: block;
-    background-color: #ccc;
+    background-color: rgba(204, 204, 204, 0.2);
     border-radius: 20px;
     margin-right: 30px;
     color: #000;
@@ -72,7 +76,7 @@ a {
     }
 
     .vieclam_scrollHorizontal .scrollHorizonetal section.section-item .wrap {
-        padding: 30px 50px 30px 50px;
+        padding: 22px 50px 30px 50px;
         position: relative;
         z-index: 2;
     }
@@ -128,6 +132,7 @@ a {
     .vieclam_scrollHorizontal .fs-md-14 {
         font-size: 14px;
         line-height: 1.5;
+
     }
 
     .vieclam_scrollHorizontal .fs-md-16 {
@@ -141,28 +146,77 @@ a {
     }
 
     .vieclam_scrollHorizontal {
-        transform: translateX(11.5%);
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .vieclam_scrollHorizontal .scrollHorizonetal {
+        transition: all 0.3;
+        /* transform: translateX(11.5%); */
+        padding-left: 11.5%;
+    }
+
+    .vieclam_scrollHorizontal .title h2 {
+        padding-left: 11.5% !important;
+
     }
 
     .vieclam_scrollHorizontal .scrollHorizonetal section.section-item {
         max-height: 516px !important;
     }
+
+    .vieclam_scrollHorizontal .scrollHorizonetal section.section-item.section-final {
+        width: 200px;
+        height: 100%;
+    }
+
+    .vieclam_scrollHorizontal .scrollHorizonetal section.section-item .img-footer>img {
+        height: 255px;
+    }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
+    .scrollHorizontal_vieclam #eluideba1e22f {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    .vieclam_scrollHorizontal {
+        padding: 30px 0 0 30px;
+    }
+
+    .vieclam_scrollHorizontal .title h2 {
+        margin-bottom: 20px !important;
+    }
+
     .vieclam_scrollHorizontal .scrollHorizonetal {
-        margin-top: 63px;
+        margin-top: 36px;
     }
 
 
     .vieclam_scrollHorizontal .scrollHorizonetal section.section-item {
-        min-height: 61vh;
+        /* min-height: 61vh; */
         min-width: 90vw !important;
 
+    }
+
+    .vieclam_scrollHorizontal .scrollHorizonetal section.section-item.section-final {
+        display: none;
     }
 }
 
 @media screen and (max-width: 767px) {
+    .scrollHorizontal_vieclam #eluideba1e22f {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .vieclam_scrollHorizontal {
+        padding: 16px 0 16px 16px;
+    }
+
     .vieclam_scrollHorizontal .title h2 {
         font-size: 34px;
         line-height: 1.5;
@@ -211,7 +265,7 @@ a {
     }
 
     .vieclam_scrollHorizontal .scrollHorizonetal section.section-item .wrap {
-        padding: 10px 0px 0px 0px;
+        padding: 12px;
         z-index: 2;
     }
 

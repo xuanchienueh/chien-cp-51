@@ -1,5 +1,5 @@
 const scrollContainer2 = document.querySelector(".vieclam_scrollHorizontal .scrollHorizonetal");
-const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_vieclam')
+const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_vieclam')// scrollHorizontal_vieclam là class của wp
 var maxScrollLeft2 = scrollContainer2 && scrollContainer2.scrollWidth - scrollContainer2.clientWidth
 let phiatren1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop
 let phiaduoi1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop + scrollHorizontal_vieclam.offsetHeight
@@ -22,14 +22,14 @@ function onWheel1(evt) {
     // console.log('scrollLeft final', Math.round(scrollContainer2.scrollLeft))
     // console.log('maxScrollLeft2', maxScrollLeft2)
 
-    if (scrollContainer2 && Math.round(scrollContainer2.scrollLeft) >= maxScrollLeft2) {
+    if (scrollContainer2 && Math.round(scrollContainer2.scrollLeft) + 2 >= maxScrollLeft2) {
         body1.style.overflowY = 'hidden'
         body1.style.height = '100%'
         if (screen.width >= 992) {
-            window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight)
+            window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight + 100)
             removeEventListenerScrollHorizontal1()
         } else {
-            window.scrollTo(0, phiaduoi1 + 90)
+            window.scrollTo(0, phiaduoi1 - 80)
             removeEventListenerScrollHorizontal1()
         }
         setTimeout(() => {
@@ -58,7 +58,7 @@ function onWindowScroll1() {
 
     if (scrollContainer2 && indexView <= 130 && indexView >= -(scrollContainer2.offsetHeight)) {
         addEventListenerScrollHorizontal1()
-        console.log('add scroll intoview')
+        // console.log('add scroll intoview')
 
     } else {
         removeEventListenerScrollHorizontal1()
