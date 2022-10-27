@@ -25,11 +25,21 @@
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.number_run_page_introduc::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    border-left: 1px dotted #000;
 }
 
 .number_run_page_introduc .col-left {
     width: 50%;
-    border-right: 1px dashed #000;
     text-align: center;
 }
 
