@@ -14,19 +14,20 @@
     justify-content: space-between;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-div,
-a {
+.vieclam_scrollHorizontal h1,
+.vieclam_scrollHorizontal h2,
+.vieclam_scrollHorizontal h3,
+.vieclam_scrollHorizontal h4,
+.vieclam_scrollHorizontal h5,
+.vieclam_scrollHorizontal h6,
+.vieclam_scrollHorizontal p,
+.vieclam_scrollHorizontal span,
+.vieclam_scrollHorizontal a,
+.vieclam_scrollHorizontal div {
     margin: 0;
     padding: 0;
 }
+
 
 .vieclam_scrollHorizontal .scrollHorizonetal section.section-item {
     display: block;
