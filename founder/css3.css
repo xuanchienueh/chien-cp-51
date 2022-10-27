@@ -181,7 +181,7 @@
 
     .introduction-founder .col-left {
         width: 100%;
-        padding: 50px 0;
+        padding: 50px 0 0 0;
     }
 
     .introduction-founder .col-right {
@@ -189,6 +189,46 @@
     }
 
     .introduction-founder .col-left .content {
-        padding: 110px 0 50px 0;
+        padding: 0;
+        position: relative;
+        bottom: 34px;
+    }
+
+    .introduction-founder .img-container {
+        top: -64px;
+        transform: scale(1);
+        height: 224px;
+    }
+
+    .introduction-founder .img-container .img_portrait {
+        height: 100%;
+    }
+
+    .introduction-founder .img-container .img_portrait>img {
+        bottom: 3%;
+    }
+
+    .introduction-founder .img-container::before {
+        bottom: 8px;
+        transform: rotate(7deg) translateX(-50%);
+        left: 47%;
+        height: 22vw;
+        width: 46vw;
+    }
+
+    .introduction-founder .img-container::after {
+        left: 54%;
+        transform: translateX(-53%) rotate(-16deg);
+        bottom: -40px;
+        width: 54vw;
+        height: 25vw;
+    }
+
+    .introduction-founder .img-container .img_portrait>img {
+        width: 45vw;
+    }
+
+    .introduction-founder .col-right {
+        padding: 0 0 12px 0;
     }
 }
