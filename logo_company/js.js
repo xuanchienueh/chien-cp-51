@@ -1,5 +1,6 @@
-const number_runs_page_introduction = document.querySelectorAll('.number_run_page_introduc .number > span')
-function logo_company_page_introduct() {
+const number_runs_page_introduction_logo = document.querySelectorAll('.number_run_page_introduc .number > span')
+const number_runs_page_introduction_systemMyclass = document.querySelectorAll('.system_myclass_page_introduct .numberRun .item .content .number .number_item > span')
+function logo_company_page_introduct(element_biggest) {
 
     function debounce(func, timeout = 700) {
         let timer;
@@ -40,10 +41,10 @@ function logo_company_page_introduct() {
     }
 
     function run() {
-        number_runs_page_introduction.forEach((number_run) => {
-            let finalNumber = Number(number_run.innerHTML)
+        element_biggest.forEach((item) => {
+            let finalNumber = Number(item.innerHTML)
             let processChange = () => { }
-            animateNumber(finalNumber, 1500, 0, processChange, number_run)
+            animateNumber(finalNumber, 1500, 0, processChange, item)
         })
     }
     let debounce_scroll = debounce(() => run())
@@ -58,4 +59,5 @@ function logo_company_page_introduct() {
     })
 }
 
-number_runs_page_introduction && logo_company_page_introduct()
+number_runs_page_introduction_logo && logo_company_page_introduct(number_runs_page_introduction_logo)
+number_runs_page_introduction_systemMyclass && logo_company_page_introduct(number_runs_page_introduction_systemMyclass)
