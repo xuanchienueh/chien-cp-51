@@ -1,0 +1,84 @@
+.tam_nhin_page_introduct {}
+
+.tam_nhin_page_introduct .col-left .title {
+    position: relative;
+}
+
+.tam_nhin_page_introduct .col-left .title::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -32px;
+    width: 60px;
+    height: 6px;
+    background-size: 250% auto;
+    background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+    transition: all 0.5s ease;
+    transition-timing-function: ease, ease;
+}
+
+.tam_nhin_page_introduct .col-left>h2 {
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+.tam_nhin_page_introduct .col-left .content {
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.tam_nhin_page_introduct .col-left .content1 {
+    margin-top: 60px;
+}
+
+.tam_nhin_page_introduct .col-left .content2 {
+    margin-top: 28px;
+}
+
+.tam_nhin_page_introduct .col-right {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.tam_nhin_page_introduct .col-right .wrap {
+    width: 350px;
+    min-height: 240px;
+    position: relative;
+}
+
+.tam_nhin_page_introduct .col-right .wrap::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    bottom: 9px;
+    right: -16px;
+    width: 100px;
+    height: 125px;
+    background-size: 250% auto;
+    background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
+    transition: all 0.5s ease;
+    transition-timing-function: ease, ease;
+}
+
+.tam_nhin_page_introduct .col-right .wrap .bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.tam_nhin_page_introduct .col-right .wrap .bg svg {
+    transform: scale(1.1);
+}
+
+.tam_nhin_page_introduct .col-right .wrap .img-main {
+    width: 100%;
+}
+
+.tam_nhin_page_introduct .col-right .wrap .img-main img {
+    width: 100%;
+    border-radius: 4px;
+}
