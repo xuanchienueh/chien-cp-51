@@ -1,0 +1,94 @@
+.introduction-founder .hero-img {
+    position: relative;
+}
+
+.introduction-founder .hero-img::before {
+    z-index: 1;
+    transform: rotate(-8deg) translateX(-50%);
+    bottom: 0.2vw;
+    box-shadow: 3px 3px 20px rgb(5 5 5 / 10%);
+    height: 15vw;
+    width: 30vw;
+    border-bottom-left-radius: 30vw;
+    border-bottom-right-radius: 30vw;
+    transition: all 1s ease !important;
+
+    content: "";
+    background: yellow;
+    transform-origin: left;
+    left: 50%;
+    position: absolute;
+}
+
+.introduction-founder .hero-img::after {
+    z-index: 0;
+    opacity: .2;
+    transform: rotate(-20deg) translateX(-53%);
+    bottom: -2vw;
+    left: 57%;
+    box-shadow: 3px 3px 20px rgb(5 5 5 / 10%);
+    height: 18vw;
+    width: 36vw;
+    border-bottom-left-radius: 36vw;
+    border-bottom-right-radius: 36vw;
+    transition: all 1s ease !important;
+
+    content: "";
+    background: yellow;
+    transform-origin: left;
+    /* left: 50%; */
+    position: absolute;
+}
+
+.introduction-founder .hero-img img {
+    position: relative;
+    z-index: 2;
+    width: 25vw;
+    height: auto;
+    clip-path: ellipse(66% 50% at 51% 50%);
+    left: 50%;
+    transform: translateX(-55%);
+    transition: all 1s ease !important;
+    vertical-align: middle;
+}
+
+.introduction-founder .hero-img svg {
+    -webkit-animation: herosubsvg 1000ms ease-out 0s 1;
+    animation: herosubsvg 1000ms ease-out 0s 1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0vh;
+    opacity: .4;
+    transition: all 2s ease !important;
+    position: absolute;
+    z-index: 0;
+    width: 40vw;
+}
+
+.introduction-founder .hero-img:hover::before {
+    transform: rotate(8deg) translateX(-50%);
+}
+
+.introduction-founder .hero-img:hover::after {
+    transform: rotate(20deg) translate(-60%, 5%);
+    opacity: .5;
+}
+
+.introduction-founder .hero-img:hover img {
+    transform: translateX(-45%);
+}
+
+.introduction-founder .hero-img:hover svg {
+    transform: scale(1.05) translateX(-45%);
+}
+
+@keyframes herosubsvg {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+}

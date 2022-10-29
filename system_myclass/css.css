@@ -18,8 +18,15 @@
     transition-timing-function: ease, ease;
 }
 
+.system_myclass_page_introduct .container-main .img_1 {
+    width: 411px;
+    height: 323px;
+}
+
 .system_myclass_page_introduct .container-main .img_1 img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 4px;
 }
 
@@ -68,6 +75,14 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .system_myclass_page_introduct .znColumnElement-innerWrapper-eluidb87b7e37 {
         padding-right: 30px;
+    }
+
+    .system_myclass_page_introduct .container-main .img_1 {
+        width: 40vw;
+        height: 23.5vh;
+        position: relative;
+        bottom: -3px;
+        right: -1px;
     }
 
     .system_myclass_page_introduct .container-main {
@@ -157,5 +172,10 @@
 
     .system_myclass_page_introduct .numberRun .item .icon svg {
         transform: scale(0.9);
+    }
+
+    .system_myclass_page_introduct .container-main .img_1 {
+        width: 63vw;
+        height: 23vh;
     }
 }
