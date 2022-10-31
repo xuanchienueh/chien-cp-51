@@ -19,6 +19,8 @@
     font-size: 40px;
     line-height: 1.4;
     color: #111111;
+    margin: 0;
+    padding: 0;
 }
 
 .logo_company_page_introduct .col-left-logo-company>p {
@@ -70,7 +72,15 @@
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .logo_company_page_introduct h3.tbk__title {
-        margin-top: 30px;
+        margin-top: 0px;
+    }
+
+    .logo_company_page_introduct h4.tbk__subtitle {
+        padding-right: 12px;
+    }
+
+    .system_myclass_page_introductLocal .col-right {
+        padding-right: 28px;
     }
 
     .logo_company_page_introduct .col-left-logo-company>h2 {

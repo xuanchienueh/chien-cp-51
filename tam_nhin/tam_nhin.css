@@ -47,7 +47,7 @@
 .tam_nhin_page_introduct .col-right .wrap::after {
     content: '';
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     bottom: 9px;
     right: -16px;
     width: 100px;
@@ -69,6 +69,7 @@
     bottom: 0;
     top: 0;
     z-index: 1;
+    transform: translateZ(-200px);
 }
 
 .tam_nhin_page_introduct .col-right .wrap .bg svg {
@@ -79,6 +80,7 @@
     width: 100%;
     height: 207px;
     position: relative;
+    transform: translateZ(100px);
     z-index: 2;
 }
 

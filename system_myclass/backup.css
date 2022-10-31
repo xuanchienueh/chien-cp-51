@@ -1,73 +1,50 @@
-.system_myclass_page_introductLocal {
-    display: flex;
-    padding: 50px 0;
-}
-
-.system_myclass_page_introductLocal .col-left {
-    width: 50%;
-}
-
-.system_myclass_page_introductLocal .col-right {
-    width: 50%;
-}
-
-.system_myclass_page_introduct .col-right .title {
-    font-size: 36px;
-    line-height: 1.4;
-}
-
-.system_myclass_page_introductLocal .container-main {
-    margin: unset;
-    padding: 0 100px 0 50px;
+.system_myclass_page_introduct .container-main {
+    width: 100%;
+    padding: 0 50px 0 50px;
     position: relative;
 }
 
-.system_myclass_page_introductLocal .container-main::after {
+.system_myclass_page_introduct .container-main::after {
     content: '';
     position: absolute;
     z-index: -1;
-    left: 39px;
+    left: 30px;
     top: -20px;
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     background-size: 250% auto;
     background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
     transition: all 0.5s ease;
     transition-timing-function: ease, ease;
 }
 
-.system_myclass_page_introductLocal .container-main .img_1 {
-    transform: translateZ(-50px);
-    position: relative;
-    width: 100%;
-    bottom: 10px;
+.system_myclass_page_introduct .container-main .img_1 {
+    width: 411px;
+    height: 323px;
 }
 
-.system_myclass_page_introductLocal .container-main .img_1 img {
+.system_myclass_page_introduct .container-main .img_1 img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 4px;
-    display: block;
-    transform: translateZ(-100px);
 }
 
-.system_myclass_page_introductLocal .container-main .bg-line {
+.system_myclass_page_introduct .container-main .bg-line {
     position: absolute;
     left: 0;
-    top: 0;
+    top: -34px;
     bottom: 0;
     right: 0;
     z-index: -1;
-    transform: translateZ(-100px);
-
 }
 
-.system_myclass_page_introductLocal .container-main .bg-line>svg {
-    transform: scale(1.2);
+.system_myclass_page_introduct .container-main .bg-line>svg {
+    transform: scale(0.97);
 }
 
 /* start numberRun */
+
 .system_myclass_page_introduct .numberRun {
     display: flex;
 }
@@ -94,11 +71,6 @@
 
 /* end numberRun */
 
-@media screen and (min-width: 993px) {
-    .system_myclass_page_introduct .numberRun {
-        margin-top: 34px;
-    }
-}
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .system_myclass_page_introduct .znColumnElement-innerWrapper-eluidb87b7e37 {
@@ -119,7 +91,7 @@
     }
 
     .system_myclass_page_introduct .container-main .bg-line {
-        top: 3px;
+        top: -7px;
     }
 
     .system_myclass_page_introduct .container-main .bg-line>svg {
@@ -129,7 +101,7 @@
     .system_myclass_page_introduct .container-main::after {
         height: 70px;
         width: 70px;
-        top: -4px;
+        top: -14px;
         left: 0;
     }
 
@@ -147,28 +119,6 @@
 }
 
 @media screen and (max-width: 767px) {
-    .system_myclass_page_introductLocal {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .system_myclass_page_introductLocal .col-left {
-        width: 100%;
-        transform: none !important;
-        display: flex;
-        justify-content: center;
-        padding: 0;
-    }
-
-    .system_myclass_page_introduct .col-right .title {
-        font-size: 24px;
-        line-height: 1.4;
-    }
-
-    .system_myclass_page_introductLocal .col-right {
-        width: 100%;
-    }
-
     .system_myclass_page_introduct .eluid4bcb35fe {
         padding-top: 0;
         margin-top: 0;
@@ -189,6 +139,7 @@
 
     .system_myclass_page_introduct .numberRun {
         flex-wrap: wrap;
+        margin-bottom: 20px;
     }
 
     .system_myclass_page_introduct .numberRun .item {
@@ -197,13 +148,7 @@
     }
 
     .system_myclass_page_introduct .container-main .bg-line {
-        top: -12px;
-        right: 0px;
-        left: -33px;
-    }
-
-    .system_myclass_page_introductLocal .container-main .img_1 img {
-        width: 85%;
+        top: -38px;
     }
 
     .system_myclass_page_introduct .container-main .bg-line>svg {
