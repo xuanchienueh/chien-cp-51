@@ -1,5 +1,6 @@
+
 const scrollContainer2 = document.querySelector(".vieclam_scrollHorizontal .scrollHorizonetal");
-const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_vieclam')// scrollHorizontal_vieclam là class của wp
+const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_vieclam')// scrollHorizontal_vieclam là class c&#7911;a wp
 var maxScrollLeft2 = scrollContainer2 && scrollContainer2.scrollWidth - scrollContainer2.clientWidth
 let phiatren1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop
 let phiaduoi1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop + scrollHorizontal_vieclam.offsetHeight
@@ -23,18 +24,21 @@ function onWheel1(evt) {
     // console.log('maxScrollLeft2', maxScrollLeft2)
 
     if (scrollContainer2 && Math.round(scrollContainer2.scrollLeft) + 2 >= maxScrollLeft2) {
-        body1.style.overflowY = 'hidden'
-        body1.style.height = '100%'
+        // body1.style.overflowY = 'hidden'
+        // body1.style.height = '100%'
         if (screen.width >= 992) {
-            window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight + 100)
+            // window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight + 100)
+            window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
             removeEventListenerScrollHorizontal1()
         } else {
-            window.scrollTo(0, phiaduoi1 - 80)
+            // window.scrollTo(0, phiaduoi1 - 80)
+            window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
+
             removeEventListenerScrollHorizontal1()
         }
-        setTimeout(() => {
-            body1.style.overflowY = 'scroll'
-        }, 700)
+        // setTimeout(() => {
+        //     body1.style.overflowY = 'scroll'
+        // }, 700)
     }
 }
 if (scrollContainer2 && screen.width > 767) {
@@ -82,3 +86,7 @@ if (screen.width <= 767) {
         });
     });
 }
+
+
+
+
