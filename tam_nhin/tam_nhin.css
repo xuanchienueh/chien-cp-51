@@ -36,12 +36,14 @@
 .tam_nhin_page_introduct .col-right {
     display: flex;
     justify-content: center;
+    transform-style: preserve-3d;
 }
 
 .tam_nhin_page_introduct .col-right .wrap {
     width: 350px;
     min-height: 240px;
     position: relative;
+    transform-style: preserve-3d;
 }
 
 .tam_nhin_page_introduct .col-right .wrap::after {
@@ -49,13 +51,15 @@
     position: absolute;
     z-index: -1;
     bottom: 9px;
-    right: -16px;
+    right: -34px;
     width: 100px;
     height: 125px;
     background-size: 250% auto;
     background-image: linear-gradient(to left, #227df9 0%, #7462f9 25%, #df3ef8 50%, #7462f9 75%, #227df9 100%);
     transition: all 0.5s ease;
     transition-timing-function: ease, ease;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
 }
 
 .su_menh_page_introduct .col-right .wrap::after {
@@ -70,6 +74,7 @@
     top: 0;
     z-index: 1;
     transform: translateZ(-200px);
+    transform-style: preserve-3d;
 }
 
 .tam_nhin_page_introduct .col-right .wrap .bg svg {
@@ -80,7 +85,8 @@
     width: 100%;
     height: 207px;
     position: relative;
-    transform: translateZ(100px);
+    transform-style: preserve-3d;
+    /* transform: translateZ(100px); */
     z-index: 2;
 }
 
@@ -89,6 +95,7 @@
     height: 100%;
     border-radius: 4px;
     object-fit: cover;
+    transform: translateZ(50px);
 }
 
 .znColumnElement-innerWrapper-eluida599799f,

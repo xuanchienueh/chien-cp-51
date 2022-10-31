@@ -20,14 +20,15 @@
     margin: unset;
     padding: 0 100px 0 50px;
     position: relative;
+    transform-style: preserve-3d;
 }
 
 .system_myclass_page_introductLocal .container-main::after {
     content: '';
     position: absolute;
     z-index: -1;
-    left: 39px;
-    top: -20px;
+    left: 30px;
+    top: -30px;
     height: 70px;
     width: 70px;
     background-size: 250% auto;
@@ -37,7 +38,7 @@
 }
 
 .system_myclass_page_introductLocal .container-main .img_1 {
-    transform: translateZ(-50px);
+    transform: translateZ(50px);
     position: relative;
     width: 100%;
     bottom: 10px;
