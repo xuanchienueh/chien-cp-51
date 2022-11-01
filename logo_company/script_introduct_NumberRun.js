@@ -59,5 +59,11 @@ function logo_company_page_introduct(element_biggest) {
     })
 }
 
-number_runs_page_introduction_logo && logo_company_page_introduct(number_runs_page_introduction_logo)
-number_runs_page_introduction_systemMyclass && logo_company_page_introduct(number_runs_page_introduction_systemMyclass)
+window.onload = () => {
+    setTimeout(() => {
+        number_runs_page_introduction_logo && logo_company_page_introduct(number_runs_page_introduction_logo)
+        number_runs_page_introduction_systemMyclass && logo_company_page_introduct(number_runs_page_introduction_systemMyclass)
+
+    }, 1000);
+
+}

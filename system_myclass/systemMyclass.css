@@ -1,6 +1,5 @@
 .system_myclass_page_introductLocal {
     display: flex;
-    padding: 50px 0;
 }
 
 .system_myclass_page_introductLocal .col-left,
@@ -93,11 +92,27 @@
     .system_myclass_page_introduct .numberRun {
         margin-top: 34px;
     }
+
+    .system_myclass_page_introductLocal .container-main {
+        min-height: 360px;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
     .system_myclass_page_introduct .znColumnElement-innerWrapper-eluidb87b7e37 {
         padding-right: 30px;
+    }
+
+    .system_myclass_page_introductLocal {
+        padding: 0;
+    }
+
+    .system_myclass_page_introductLocal .col-left {
+        width: 60%;
+    }
+
+    .system_myclass_page_introductLocal .col-right {
+        width: 40%;
     }
 
     .system_myclass_page_introduct .container-main .img_1 {
@@ -114,7 +129,10 @@
     }
 
     .system_myclass_page_introductLocal .container-main .box {
-        top: -1%;
+        top: 0.5%;
+        left: 2%;
+        width: 120px;
+        height: 120px;
     }
 
     .system_myclass_page_introductLocal .container-main .img_main img {
@@ -153,6 +171,7 @@
     .system_myclass_page_introductLocal {
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     .system_myclass_page_introductLocal .col-left {
