@@ -90,7 +90,11 @@
 
 @media screen and (min-width: 993px) {
     .system_myclass_page_introduct .numberRun {
-        margin-top: 34px;
+        margin-top: 110px;
+    }
+
+    .system_myclass_page_introductLocal .col-right {
+        padding-left: 50px;
     }
 
     .system_myclass_page_introductLocal .container-main {
