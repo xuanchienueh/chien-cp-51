@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hcn {
+    width: 700px;
+    height: 500px;
+    background-color: #333;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; */
+    padding-top: 100px;
+    padding-left: 100px;
+
+}
+
+.item {
+    width: 100px;
+    height: 15px;
+    background-color: red;
+}
