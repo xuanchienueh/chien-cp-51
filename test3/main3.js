@@ -1,13 +1,15 @@
 
 const scrollContainer2 = document.querySelector(".vieclam_scrollHorizontal .scrollHorizonetal");
-const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_vieclam')// scrollHorizontal_vieclam là class c&#7911;a wp
+const scrollHorizontal_vieclam = document.querySelector('.scrollHorizontal_vieclam')// scrollHorizontal_vieclam l� class c&#7911;a wp
 var maxScrollLeft2 = scrollContainer2 && scrollContainer2.scrollWidth - scrollContainer2.clientWidth
 let phiatren1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop
 let phiaduoi1 = scrollHorizontal_vieclam && scrollHorizontal_vieclam.offsetTop + scrollHorizontal_vieclam.offsetHeight
 let body1 = document.querySelector('body')
 
+
 function onWheel1(evt) {
     evt.preventDefault();
+
     if (scrollContainer2) {
         scrollContainer2.scrollLeft += evt.deltaY;
         scrollContainer2.scrollIntoView(true)
@@ -26,19 +28,23 @@ function onWheel1(evt) {
     if (scrollContainer2 && Math.round(scrollContainer2.scrollLeft) + 2 >= maxScrollLeft2) {
         // body1.style.overflowY = 'hidden'
         // body1.style.height = '100%'
+
         if (screen.width >= 992) {
             // window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight + 100)
-            window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
             removeEventListenerScrollHorizontal1()
+            window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
+            console.log('scroll xong roi')
+            // runScrollBody()
+
         } else {
             // window.scrollTo(0, phiaduoi1 - 80)
             window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
 
             removeEventListenerScrollHorizontal1()
+            // runScrollBody()
+
         }
-        // setTimeout(() => {
-        //     body1.style.overflowY = 'scroll'
-        // }, 700)
+
     }
 }
 if (scrollContainer2 && screen.width > 767) {
@@ -61,11 +67,20 @@ function onWindowScroll1() {
     let indexView = scrollContainer2 && scrollContainer2.getBoundingClientRect().top
 
     if (scrollContainer2 && indexView <= 130 && indexView >= -(scrollContainer2.offsetHeight)) {
+
+        // pauseScrollBody()
+        // scrollContainer2.scrollIntoView(true)
+        // window.scrollTo(0, window.scrollY - 120)
         addEventListenerScrollHorizontal1()
+        scrollContainer2.scrollLeft + 200
+
+
         // console.log('add scroll intoview')
 
     } else {
         removeEventListenerScrollHorizontal1()
+        // runScrollBody()
+
     }
 
 }
@@ -88,5 +103,15 @@ if (screen.width <= 767) {
 }
 
 
-
+function pauseScrollBody() {
+    // body1.style.overflowY = 'hidden'
+    // body1.style.height = '100%'
+    body1.classList.add('disable-scroll')
+    console.log('scroll body pause')
+    return 1
+}
+function runScrollBody() {
+    body1.classList.remove('disable-scroll')
+    console.log('scroll body kich hoat')
+}
 
