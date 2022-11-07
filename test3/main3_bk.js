@@ -33,7 +33,7 @@ function onWheel1(evt) {
     }
 }
 if (scrollContainer2 && screen.width > 767) {
-    scrollContainer2 && scrollContainer2.addEventListener("wheel", onWheel1)
+    scrollContainer2.addEventListener("wheel", onWheel1)
     window.addEventListener('scroll', onWindowScroll1)
 }
 

@@ -30,14 +30,12 @@ function onWheel1(evt) {
         // body1.style.height = '100%'
 
         if (screen.width >= 992) {
-            // window.scrollTo(0, window.scrollY + scrollContainer2.offsetHeight + 100)
             removeEventListenerScrollHorizontal1()
             window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
             console.log('scroll xong roi')
             // runScrollBody()
 
         } else {
-            // window.scrollTo(0, phiaduoi1 - 80)
             window.scroll({ left: 0, top: window.scrollY + scrollContainer2.offsetHeight + 100, behavior: 'smooth' })
 
             removeEventListenerScrollHorizontal1()
@@ -65,21 +63,17 @@ function onWindowScroll1() {
     // console.log('checkView', Math.round(scrollContainer2.getBoundingClientRect().top))
     // console.log('scrollY', Math.round(window.scrollY))
     let indexView = scrollContainer2 && scrollContainer2.getBoundingClientRect().top
+    console.log(window.scrollY)
 
     if (scrollContainer2 && indexView <= 130 && indexView >= -(scrollContainer2.offsetHeight)) {
 
         // pauseScrollBody()
-        // scrollContainer2.scrollIntoView(true)
-        // window.scrollTo(0, window.scrollY - 120)
         addEventListenerScrollHorizontal1()
-        scrollContainer2.scrollLeft + 200
+        // setTimeout(() => { runScrollBody() }, 500)
 
-
-        // console.log('add scroll intoview')
 
     } else {
         removeEventListenerScrollHorizontal1()
-        // runScrollBody()
 
     }
 
