@@ -1,13 +1,4 @@
 const itemPercents = document.querySelectorAll('#statistical .container .bg')
-const c1 = document.querySelector("#statistical #c1");
-const t1 = document.querySelector("#statistical #t1");
-const c2 = document.querySelector("#statistical #c2");
-const t2 = document.querySelector("#statistical #t2");
-const c3 = document.querySelector("#statistical #c3");
-const t3 = document.querySelector("#statistical #t3");
-const c4 = document.querySelector("#statistical #c4");
-const t4 = document.querySelector("#statistical #t4");
-
 const number_percent1 = document.querySelector("#statistical .container .number_percent1");
 const number_percent2 = document.querySelector("#statistical .container .number_percent2");
 const number_percent3 = document.querySelector("#statistical .container .number_percent3");
@@ -15,10 +6,10 @@ const number_percent4 = document.querySelector("#statistical .container .number_
 const itemPercents0 = Math.floor(getOffset(itemPercents[0]));
 const itemPercents2 = Math.floor(getOffset(itemPercents[2]));
 
-let valuePercent1 = 67
-let valuePercent2 = 77
-let valuePercent3 = 87
-let valuePercent4 = 97
+let valuePercent1 = number_percent1.innerHTML * 1
+let valuePercent2 = number_percent2.innerHTML * 1
+let valuePercent3 = number_percent3.innerHTML * 1
+let valuePercent4 = number_percent4.innerHTML * 1
 let percent_start = 0;
 const html = document.documentElement;
 
@@ -41,8 +32,29 @@ var processChange1 = debounce(() => onScrollRow1());
 var processChange2 = debounce(() => onScrollRow2());
 var processChange = debounce(() => onScroll());
 
-window.onload = () => {
-  onScroll()
+let timeOutId = setTimeout(() => {
+  window.addEventListener("scroll", () => {
+    let distance = html.scrollTop
+
+    if (window.innerWidth > 992) {
+      if (distance > itemPercents0 - itemPercent_height - 200 && distance < itemPercents0 - 200) processChange1()
+      if (distance > itemPercents2 - itemPercent_height - 200 && distance < itemPercents2) processChange2()
+    }
+
+    if (window.innerWidth <= 992 && window.innerWidth > 767) {
+      if (distance > itemPercents0 - 300 && distance < itemPercents0 - 200) processChange1()
+      if (distance > itemPercents2 - 300 && distance < itemPercents2 + 100) processChange2()
+
+    }
+
+    if (window.screenTop <= 767) {
+      if (distance > itemPercents0 - 300 && distance < itemPercents0) processChange1()
+      if (distance > itemPercents2 - 300 && distance < itemPercents2 + 100) processChange2()
+    }
+  });
+}, 1)
+
+/* window.onload = () => {
   let timeOutId = setTimeout(() => {
     window.addEventListener("scroll", () => {
       let distance = html.scrollTop
@@ -64,7 +76,7 @@ window.onload = () => {
       }
     });
   }, 2000)
-}
+} */
 
 function animateNumber(
   finalNumber,
@@ -90,7 +102,7 @@ function animateNumber(
       }
       const percent = (currentNumber) => {
         elementCircle ? elementCircle.style.strokeDasharray = `${currentNumber} 100` : null;
-        eleNumberPercent ? eleNumberPercent.innerHTML = currentNumber + "%" : null;
+        eleNumberPercent ? eleNumberPercent.innerHTML = currentNumber : null;
       }
       percent(currentNumber)
     }
