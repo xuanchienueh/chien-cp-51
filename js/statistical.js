@@ -6,10 +6,10 @@ const number_percent4 = document.querySelector("#statistical .container .number_
 const itemPercents0 = Math.floor(getOffset(itemPercents[0]));
 const itemPercents2 = Math.floor(getOffset(itemPercents[2]));
 
-let valuePercent1 = number_percent1.innerHTML * 1
-let valuePercent2 = number_percent2.innerHTML * 1
-let valuePercent3 = number_percent3.innerHTML * 1
-let valuePercent4 = number_percent4.innerHTML * 1
+let valuePercent1 = number_percent1 && number_percent1.innerHTML * 1
+let valuePercent2 = number_percent2 && number_percent2.innerHTML * 1
+let valuePercent3 = number_percent3 && number_percent3.innerHTML * 1
+let valuePercent4 = number_percent4 && number_percent4.innerHTML * 1
 let percent_start = 0;
 const html = document.documentElement;
 
