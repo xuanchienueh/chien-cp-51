@@ -1,26 +1,55 @@
-body {
-    height: 100vh;
-    background-color: #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.testimonial-content {
+    max-width: 1199px;
+    margin: auto;
+    text-align: center;
+    padding: 100px 0;
 }
 
-.hcn {
-    width: 700px;
-    height: 500px;
-    background-color: #333;
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; */
-    padding-top: 100px;
-    padding-left: 100px;
-
+.testimonial-thumbs .testimonial-pic img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    padding: 4px;
+    position: relative;
+    z-index: 2;
+    background-color: pink;
 }
 
-.item {
-    width: 100px;
-    height: 15px;
-    background-color: red;
+.testimonial-thumbs {
+    width: 300px;
+    margin: auto;
+    box-sizing: border-box;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-comment {
+    min-height: 300px;
+    width: 100%;
+}
+
+.testimonial-comment .swiper-wrapper {
+    padding-bottom: 20px;
+}
+
+.testimonial-thumbs .testimonial-pic {
+    padding: 30px 0 0;
+    transition: all 0.5s;
+}
+
+.testimonial-thumbs .swiper-slide-thumb-active .testimonial-pic {
+    padding: 0 0 40px;
+}
+
+.testimonial-text {
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 20px 50px 0 rgb(0 0 0 / 10%);
+    margin: 20px 100px;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
 }
