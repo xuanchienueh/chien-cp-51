@@ -1,55 +1,36 @@
-.testimonial-content {
-    max-width: 1199px;
-    margin: auto;
-    text-align: center;
-    padding: 100px 0;
-}
-
-.testimonial-thumbs .testimonial-pic img {
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    padding: 4px;
-    position: relative;
-    z-index: 2;
-    background-color: pink;
-}
-
-.testimonial-thumbs {
-    width: 300px;
-    margin: auto;
-    box-sizing: border-box;
-    height: 170px;
-    position: relative;
-    overflow: hidden;
-}
-
-.testimonial-comment {
-    min-height: 300px;
+.custom_img_page_thu_vien_anh_1 img {
+    height: 106px;
     width: 100%;
+    object-fit: cover;
 }
 
-.testimonial-comment .swiper-wrapper {
-    padding-bottom: 20px;
+.custom_img_page_thu_vien_anh_2 img {
+    height: 172px;
+    width: 100%;
+    object-fit: cover;
 }
 
-.testimonial-thumbs .testimonial-pic {
-    padding: 30px 0 0;
-    transition: all 0.5s;
+.custom_img_page_thu_vien_anh_3 img {
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
 }
 
-.testimonial-thumbs .swiper-slide-thumb-active .testimonial-pic {
-    padding: 0 0 40px;
+@media screen and (max-width: 991px) {
+    .custom_img_page_thu_vien_anh_3 img {
+        height: auto;
+
+    }
+
+    .custom_img_page_thu_vien_anh_2 img {
+        height: 124px;
+
+    }
 }
 
-.testimonial-text {
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 20px 50px 0 rgb(0 0 0 / 10%);
-    margin: 20px 100px;
-    border-radius: 10px;
-    background-color: #fff;
-    max-width: 770px;
-    margin-left: auto;
-    margin-right: auto;
+@media screen and (max-width: 767px) {
+    .custom_img_page_thu_vien_anh_3 img {
+        height: auto;
+
+    }
 }
