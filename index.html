@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./index.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
 
-<body>
-
-    <div class="feedback__item custom_img_page_thu_vien_anh_3">
-        <a href="https://cybersoft.edu.vn/wp-content/uploads/2022/11/trinhbay_19.jpg" data-fancybox="feedbackGallery"
-            data-caption="">
-            <img src="https://cybersoft.edu.vn/wp-content/uploads/2022/11/trinhbay_19.jpg" alt="" />
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </a>
+  <body>
+    <div class="main">
+      <div class="w3-light-grey">
+        <div id="myBar" class="w3-container w3-green" style="height: 12px">
+          <div
+            class="number number20 active active_arrow"
+            onclick="move(event)"
+          >
+            20
+          </div>
+          <div class="number number40" onclick="move(event)">40</div>
+          <div class="number number60" onclick="move(event)">60</div>
+          <div class="number number80" onclick="move(event)">80</div>
+          <div class="number number80" onclick="move(event)">100</div>
+          <div class="number number80" onclick="move(event)">100</div>
+          <div class="number number80" onclick="move(event)">100</div>
+        </div>
+      </div>
+      <div class="content"></div>
     </div>
 
-
-
-</body>
-
+    <script src="./limit_10_tag_blog.js"></script>
+  </body>
 </html>
