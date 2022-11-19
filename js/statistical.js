@@ -1,44 +1,108 @@
-let c1 = document.getElementById("c1");
-let t1 = document.getElementById("t1");
-let c2 = document.getElementById("c2");
-let t2 = document.getElementById("t2");
-let c3 = document.getElementById("c3");
-let t3 = document.getElementById("t3");
-let c4 = document.getElementById("c4");
-let t4 = document.getElementById("t4");
+const itemPercents = document.querySelectorAll("#statistical .container .bg");
+const number_percent1 = document.querySelector(
+  "#statistical .container .number_percent1"
+);
+const number_percent2 = document.querySelector(
+  "#statistical .container .number_percent2"
+);
+const number_percent3 = document.querySelector(
+  "#statistical .container .number_percent3"
+);
+const number_percent4 = document.querySelector(
+  "#statistical .container .number_percent4"
+);
+const itemPercents0 = Math.floor(getOffset(itemPercents[0]));
+const itemPercents2 = Math.floor(getOffset(itemPercents[2]));
+
+let valuePercent1 = number_percent1 && number_percent1.innerHTML * 1;
+let valuePercent2 = number_percent2 && number_percent2.innerHTML * 1;
+let valuePercent3 = number_percent3 && number_percent3.innerHTML * 1;
+let valuePercent4 = number_percent4 && number_percent4.innerHTML * 1;
 let percent_start = 0;
-window.onload = () => {
-  animateNumber(67, 1000, 0, percent1);
-  animateNumber(77, 1000, 0, percent2);
-  animateNumber(87, 1000, 0, percent3);
-  animateNumber(97, 1000, 0, percent4);
-};
-function debounce(func, timeout = 700) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
+const html = document.documentElement;
+
+let itemPercent_height =
+  itemPercents && itemPercents[0] && itemPercents[0].clientHeight;
+function onScroll() {
+  onScrollRow1();
+  onScrollRow2();
 }
-function onScroll1() {
-  animateNumber(67, 1000, 0, percent1);
-  animateNumber(77, 1000, 0, percent2);
-  animateNumber(87, 1000, 0, percent3);
-  animateNumber(97, 1000, 0, percent4);
+function onScrollRow1() {
+  animateNumber(valuePercent1, 1000, 0, c1, number_percent1);
+  animateNumber(valuePercent2, 1000, 0, c2, number_percent2);
+}
+function onScrollRow2() {
+  animateNumber(valuePercent3, 1000, 0, c3, number_percent3);
+  animateNumber(valuePercent4, 1000, 0, c4, number_percent4);
 }
 
-const processChange = debounce(() => onScroll1());
-window.addEventListener("scroll", () => {
-  processChange();
-});
+var processChange1 = debounce(() => onScrollRow1());
+var processChange2 = debounce(() => onScrollRow2());
+var processChange = debounce(() => onScroll());
+
+let timeOutId = setTimeout(() => {
+  window.addEventListener("scroll", () => {
+    let distance = html.scrollTop;
+
+    if (window.innerWidth > 992) {
+      if (
+        distance > itemPercents0 - itemPercent_height - 200 &&
+        distance < itemPercents0 - 200
+      )
+        processChange1();
+      if (
+        distance > itemPercents2 - itemPercent_height - 200 &&
+        distance < itemPercents2
+      )
+        processChange2();
+    }
+
+    if (window.innerWidth <= 992 && window.innerWidth > 767) {
+      if (distance > itemPercents0 - 300 && distance < itemPercents0 - 200)
+        processChange1();
+      if (distance > itemPercents2 - 300 && distance < itemPercents2 + 100)
+        processChange2();
+    }
+
+    if (window.screenTop <= 767) {
+      if (distance > itemPercents0 - 300 && distance < itemPercents0)
+        processChange1();
+      if (distance > itemPercents2 - 300 && distance < itemPercents2 + 100)
+        processChange2();
+    }
+  });
+}, 1);
+
+/* window.onload = () => {
+  let timeOutId = setTimeout(() => {
+    window.addEventListener("scroll", () => {
+      let distance = html.scrollTop
+
+      if (window.innerWidth > 992) {
+        if (distance > itemPercents0 - itemPercent_height - 200 && distance < itemPercents0 - 200) processChange1()
+        if (distance > itemPercents2 - itemPercent_height - 200 && distance < itemPercents2) processChange2()
+      }
+
+      if (window.innerWidth <= 992 && window.innerWidth > 767) {
+        if (distance > itemPercents0 - 300 && distance < itemPercents0 - 200) processChange1()
+        if (distance > itemPercents2 - 300 && distance < itemPercents2 + 100) processChange2()
+
+      }
+
+      if (window.screenTop <= 767) {
+        if (distance > itemPercents0 - 300 && distance < itemPercents0) processChange1()
+        if (distance > itemPercents2 - 300 && distance < itemPercents2 + 100) processChange2()
+      }
+    });
+  }, 2000)
+} */
 
 function animateNumber(
   finalNumber,
-  duration = 2000,
+  duration = 1000,
   startNumber = 0,
-  callback
+  elementCircle,
+  eleNumberPercent
 ) {
   let currentNumber = startNumber;
   const interval = window.setInterval(updateNumber, 17);
@@ -55,32 +119,30 @@ function animateNumber(
       } else {
         currentNumber += inc;
       }
-      callback(currentNumber);
+      const percent = (currentNumber) => {
+        elementCircle
+          ? (elementCircle.style.strokeDasharray = `${currentNumber} 100`)
+          : null;
+        eleNumberPercent ? (eleNumberPercent.innerHTML = currentNumber) : null;
+      };
+      percent(currentNumber);
     }
   }
 }
 
-function percent1(number) {
-  c1.style.strokeDasharray = `${number} 100`;
-  //   t1.textContent = `${number}%`;
-  const number_percent1 = document.querySelector(".container .number_percent1");
-  number_percent1.innerHTML = number + "%";
+function debounce(func, timeout = 500) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
 }
-function percent2(number) {
-  c2.style.strokeDasharray = `${number} 100`;
-  const number_percent2 = document.querySelector(".container .number_percent2");
-  number_percent2.innerHTML = number + "%";
-  //   t2.textContent = `${number}%`;
-}
-function percent3(number) {
-  c3.style.strokeDasharray = `${number} 100`;
-  const number_percent3 = document.querySelector(".container .number_percent3");
-  number_percent3.innerHTML = number + "%";
-  //   t3.textContent = `${number}%`;
-}
-function percent4(number) {
-  c4.style.strokeDasharray = `${number} 100`;
-  const number_percent4 = document.querySelector(".container .number_percent4");
-  number_percent4.innerHTML = number + "%";
-  //   t4.textContent = `${number}%`;
+
+function getOffset(el) {
+  if (el !== undefined) {
+    const rect = el.getBoundingClientRect();
+    return rect.top + window.scrollY;
+  }
 }
