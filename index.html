@@ -1,38 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
     />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <div class="main">
-      <div class="w3-light-grey">
-        <div id="myBar" class="w3-container w3-green" style="height: 12px">
-          <div
-            class="number number20 active active_arrow"
-            onclick="move(event)"
-          >
-            20
-          </div>
-          <div class="number number40" onclick="move(event)">40</div>
-          <div class="number number60" onclick="move(event)">60</div>
-          <div class="number number80" onclick="move(event)">80</div>
-          <div class="number number80" onclick="move(event)">100</div>
-          <div class="number number80" onclick="move(event)">100</div>
-          <div class="number number80" onclick="move(event)">100</div>
+    <div class="get_hire">
+      <div class="tabTitle">
+        <ul>
+          <li class="titleItem">
+            <div class="itemContent active" onclick="activeTabLearning(event)">
+              <div class="tabItemTitle">
+                <h4>The Basics</h4>
+              </div>
+              <span class="curriculumIcon">
+                <i class="las la-clock"></i>
+              </span>
+              <div class="arrowAfter activeArrow"></div>
+            </div>
+          </li>
+          <li class="titleItem">
+            <div class="itemContent" onclick="activeTabLearning(event)">
+              <div class="tabItemTitle">
+                <h4>Week 1-2</h4>
+              </div>
+              <span class="curriculumIcon">
+                <i class="las la-layer-group"></i>
+              </span>
+              <div class="arrowAfter"></div>
+            </div>
+          </li>
+          <li class="titleItem">
+            <div class="itemContent" onclick="activeTabLearning(event)">
+              <div class="tabItemTitle">
+                <h4>Week 3-6</h4>
+              </div>
+              <span class="curriculumIcon">
+                <i class="las la-layer-group"></i>
+              </span>
+              <div class="arrowAfter"></div>
+            </div>
+          </li>
+          <li class="titleItem">
+            <div class="itemContent" onclick="activeTabLearning(event)">
+              <div class="tabItemTitle">
+                <h4>Week 7-10</h4>
+              </div>
+              <span class="curriculumIcon">
+                <i class="las la-layer-group"></i>
+              </span>
+              <div class="arrowAfter"></div>
+            </div>
+          </li>
+          <li class="titleItem">
+            <div class="itemContent" onclick="activeTabLearning(event)">
+              <div class="tabItemTitle">
+                <h4>Week 11-14</h4>
+              </div>
+              <span class="curriculumIcon">
+                <i class="las la-layer-group"></i>
+              </span>
+              <div class="arrowAfter"></div>
+            </div>
+          </li>
+          <li class="titleItem">
+            <div class="itemContent" onclick="activeTabLearning(event)">
+              <div class="tabItemTitle">
+                <h4>Graduation</h4>
+              </div>
+              <span class="curriculumIcon">
+                <i class="las la-graduation-cap"></i>
+              </span>
+              <div class="arrowAfter"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="tabTitleLine">
+          <span></span>
         </div>
       </div>
-      <div class="content"></div>
+      <div class="tabContent">
+        <ul>
+          <li class="contentItem active">
+            <div class="ItemContent">
+              <h4>2 WEEKS</h4>
+              <span>
+                To make sure that our students are set up for success, all
+                full-time students take a skills assessment to see whether
+                programming basics would be helpful for them, or if they should
+                skip straight to web fundamentals. There is no additional cost,
+                regardless of where you start your Dojo journey.
+              </span>
+            </div>
+          </li>
+          <li class="contentItem">
+            <h4>WEEK 1-2</h4>
+            <span>
+              Learn the basics of front-end development and build your first set
+              of user interfaces with HTML, CSS, and Javascript!
+            </span>
+          </li>
+          <li class="contentItem">
+            <h4>WEEK 3-6</h4>
+            <span>
+              Python is one of the most in-demand programming languages in the
+              industry. It is favored by companies such as Instagram, YouTube,
+              and Spotify. Python’s diversity, adaptability and its elegant,
+              easy-to-master basics set it apart from other programming
+              languages, making it popular for use in web development, machine
+              learning, data science, scientific computation, and cloud
+              infrastructure.
+            </span>
+          </li>
+          <li class="contentItem">
+            <h4>WEEK 7-10</h4>
+            <span>
+              Javascript is a user-friendly, full-stack framework ideal for
+              building dynamic websites and applications. It is a free and
+              open-source stack designed to supply developers with a quick and
+              organized method for creating rapid prototypes of Javascript-based
+              web applications. One of the main benefits of the Javascript stack
+              is that the single language runs on every application level,
+              making it an efficient and modern approach to web development.
+            </span>
+          </li>
+          <li class="contentItem">
+            <h4>WEEK 11-14</h4>
+            <span>
+              C# is one of the most versatile programming languages, making it a
+              must when writing for desktop apps, background services, web
+              applications and even mobile apps. The versatility is crucial
+              because the investment in learning this language can be used for a
+              wide range of things, making your skillset very portable in the
+              job market. And now with .NET Core working brilliantly on MacOS
+              and Linux, there is no limit to what can be achieved.
+            </span>
+          </li>
+          <li class="contentItem">
+            <h4>Graduation</h4>
+            <span>
+              You made it! Upon graduation, you have proven yourself as a full
+              stack developer. Not only do you possess a backlog of assignments
+              that test your dev skills, but you have built compelling projects
+              that prove you as a commodity in the industry!
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <script src="./limit_10_tag_blog.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
