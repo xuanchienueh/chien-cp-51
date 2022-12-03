@@ -41,6 +41,13 @@
   background: yellowgreen;
   margin-top: 50px;
 }
+.content .item {
+  display: none;
+  padding: 30px;
+}
+.content .item.active {
+  display: block;
+}
 
 body {
   padding-top: 100px;
