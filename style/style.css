@@ -2,6 +2,11 @@
 body {
   font-family: "Muli", sans-serif;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 h2 {
   font-weight: 400;
@@ -349,7 +354,7 @@ input[type="text"] {
   right: 0;
   width: 0;
   height: 2px;
-  background-color: #997033;
+  background-color: blue; /* cạnh trên */
   transition: 0.2s;
   transition-delay: 0.2s;
 }
@@ -360,6 +365,7 @@ input[type="text"] {
   right: auto;
   left: 0;
   transition-delay: 0.6s;
+  background-color: red; /* cạnhg dưới */
 }
 
 .effect-6 ~ .focus-border i:before,
@@ -370,7 +376,7 @@ input[type="text"] {
   left: 0;
   width: 2px;
   height: 0;
-  background-color: #997033;
+  background-color: goldenrod; /* cạnh trái */
   transition: 0.2s;
 }
 
@@ -380,6 +386,7 @@ input[type="text"] {
   top: auto;
   bottom: 0;
   transition-delay: 0.4s;
+  background-color: green; /* cạnh phải */
 }
 
 .effect-6:focus ~ .focus-border:before,
@@ -397,9 +404,7 @@ input[type="text"] {
 }
 
 .effect-6:focus ~ .focus-border i:before,
-.effect-6:focus ~ .focus-border i:after,
-.has-content.effect-6 ~ .focus-border i:before,
-.has-content.effect-6 ~ .focus-border i:after {
+.effect-6:focus ~ .focus-border i:after {
   height: 100%;
   transition: 0.2s;
 }
@@ -613,4 +618,75 @@ input[type="text"] {
   .responsive {
     color: blue;
   }
+}
+
+.test_flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tem {
+  width: calc((100% - 70px) / 3);
+  background-color: gray;
+  margin-right: 35px;
+  margin-bottom: 35px;
+  padding: 12px;
+}
+.tem > p {
+  color: #fff !important;
+}
+.tem img {
+  width: 100%;
+  object-fit: cover;
+}
+.tem:nth-child(3n) {
+  margin-right: 0;
+}
+
+#submit {
+  padding: 50px;
+}
+.submit {
+  border: none;
+  outline: none;
+  position: relative;
+}
+.submit:hover::after {
+  width: 100%;
+  transition: 0.2s;
+  background-color: red;
+}
+.submit:hover::before {
+  transition: 0.2s;
+  transition-delay: 0.2s;
+  height: 100%;
+}
+
+.submit::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 2px;
+  left: 0;
+  width: 0%;
+  background-color: red;
+  transition: 0.2s;
+  transition-delay: 0.4s;
+}
+.submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 0%;
+  right: 0;
+  width: 2px;
+  background-color: blue;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.submit span {
+  padding: 30px 50px;
+  display: block;
 }
