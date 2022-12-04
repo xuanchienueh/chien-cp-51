@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+/* Định vị tương đối vùng chứa */
+.img-zoom-container {
+  position: relative;
+  display: flex;
+}
+/* Tạo kiểu cho hình ảnh */
+.img-zoom-container img {
+  width: 300px;
+  height: 200px;
+}
+/* Tạo kiểu cho vùng chứa hiển thị zoom ảnh */
+.img-zoom-container .img-zoom-result {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #d4d4d4;
+  margin-top: 20px;
+}
+/* Tạo kiểu cho vùng hình ảnh cần phóng to */
+.img-zoom-container .img-zoom-lens {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  border: 1px solid red;
+  visibility: hidden;
+  cursor: zoom-in;
+}

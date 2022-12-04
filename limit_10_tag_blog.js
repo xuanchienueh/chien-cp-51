@@ -70,7 +70,7 @@ let timerInterval = setInterval(() => {
     indexActive++;
   }
   listButton[indexActive].click();
-}, 1500);
+}, 5000);
 
 boxContent.onmouseover = () => {
   clearInterval(timerInterval);
@@ -83,5 +83,5 @@ boxContent.onmouseout = () => {
       indexActive++;
     }
     listButton[indexActive].click();
-  }, 1500);
+  }, 5000);
 };
